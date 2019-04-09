@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		AA122E0F225D5C3F00757B6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA122E0E225D5C3F00757B6B /* AppDelegate.swift */; };
 		AA122E11225D5C3F00757B6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA122E10225D5C3F00757B6B /* ViewController.swift */; };
-		AA122E14225D5C3F00757B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E12225D5C3F00757B6B /* Main.storyboard */; };
+		AA122E14225D5C3F00757B6B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E12225D5C3F00757B6B /* Home.storyboard */; };
 		AA122E16225D5C4000757B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA122E15225D5C4000757B6B /* Assets.xcassets */; };
 		AA122E19225D5C4000757B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E17225D5C4000757B6B /* LaunchScreen.storyboard */; };
+		AA122E22225D5F1700757B6B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E21225D5F1700757B6B /* Authentication.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA122E0B225D5C3F00757B6B /* Custom Workout Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom Workout Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA122E0E225D5C3F00757B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA122E10225D5C3F00757B6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AA122E13225D5C3F00757B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA122E13225D5C3F00757B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		AA122E15225D5C4000757B6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA122E18225D5C4000757B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA122E1A225D5C4000757B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA122E21225D5F1700757B6B /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +58,21 @@
 			children = (
 				AA122E0E225D5C3F00757B6B /* AppDelegate.swift */,
 				AA122E10225D5C3F00757B6B /* ViewController.swift */,
-				AA122E12225D5C3F00757B6B /* Main.storyboard */,
 				AA122E15225D5C4000757B6B /* Assets.xcassets */,
 				AA122E17225D5C4000757B6B /* LaunchScreen.storyboard */,
+				AA122E20225D5EF700757B6B /* Storyboards */,
 				AA122E1A225D5C4000757B6B /* Info.plist */,
 			);
 			path = "Custom Workout Generator";
+			sourceTree = "<group>";
+		};
+		AA122E20225D5EF700757B6B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AA122E12225D5C3F00757B6B /* Home.storyboard */,
+				AA122E21225D5F1700757B6B /* Authentication.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +133,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA122E22225D5F1700757B6B /* Authentication.storyboard in Resources */,
 				AA122E19225D5C4000757B6B /* LaunchScreen.storyboard in Resources */,
 				AA122E16225D5C4000757B6B /* Assets.xcassets in Resources */,
-				AA122E14225D5C3F00757B6B /* Main.storyboard in Resources */,
+				AA122E14225D5C3F00757B6B /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,12 +155,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AA122E12225D5C3F00757B6B /* Main.storyboard */ = {
+		AA122E12225D5C3F00757B6B /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AA122E13225D5C3F00757B6B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		AA122E17225D5C4000757B6B /* LaunchScreen.storyboard */ = {
