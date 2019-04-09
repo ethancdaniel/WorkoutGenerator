@@ -13,9 +13,12 @@
 		AA122E16225D5C4000757B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA122E15225D5C4000757B6B /* Assets.xcassets */; };
 		AA122E19225D5C4000757B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E17225D5C4000757B6B /* LaunchScreen.storyboard */; };
 		AA122E22225D5F1700757B6B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E21225D5F1700757B6B /* Authentication.storyboard */; };
+		E43E4C6AE9A9ADED3A267AA7 /* Pods_Custom_Workout_Generator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29067B3C8F41C829D6D90C71 /* Pods_Custom_Workout_Generator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29067B3C8F41C829D6D90C71 /* Pods_Custom_Workout_Generator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Custom_Workout_Generator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		362E73315B1B02626EC3C8E7 /* Pods-Custom Workout Generator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom Workout Generator.debug.xcconfig"; path = "Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator.debug.xcconfig"; sourceTree = "<group>"; };
 		AA122E0B225D5C3F00757B6B /* Custom Workout Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom Workout Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA122E0E225D5C3F00757B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA122E10225D5C3F00757B6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		AA122E18225D5C4000757B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA122E1A225D5C4000757B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA122E21225D5F1700757B6B /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		C332C164D310970BAAFD9015 /* Pods-Custom Workout Generator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom Workout Generator.release.xcconfig"; path = "Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43E4C6AE9A9ADED3A267AA7 /* Pods_Custom_Workout_Generator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				AA122E0D225D5C3F00757B6B /* Custom Workout Generator */,
 				AA122E0C225D5C3F00757B6B /* Products */,
+				D5250EDC5AA4DD39B8739C82 /* Pods */,
+				E89BC1384972BC40699B0AE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +82,24 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		D5250EDC5AA4DD39B8739C82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				362E73315B1B02626EC3C8E7 /* Pods-Custom Workout Generator.debug.xcconfig */,
+				C332C164D310970BAAFD9015 /* Pods-Custom Workout Generator.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E89BC1384972BC40699B0AE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29067B3C8F41C829D6D90C71 /* Pods_Custom_Workout_Generator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA122E1D225D5C4000757B6B /* Build configuration list for PBXNativeTarget "Custom Workout Generator" */;
 			buildPhases = (
+				5D76293B56B26B8239B2B3FF /* [CP] Check Pods Manifest.lock */,
 				AA122E07225D5C3F00757B6B /* Sources */,
 				AA122E08225D5C3F00757B6B /* Frameworks */,
 				AA122E09225D5C3F00757B6B /* Resources */,
+				BA319A922DABEFEF2AA13911 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D76293B56B26B8239B2B3FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Custom Workout Generator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA319A922DABEFEF2AA13911 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA122E07225D5C3F00757B6B /* Sources */ = {
@@ -292,6 +366,7 @@
 		};
 		AA122E1E225D5C4000757B6B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 362E73315B1B02626EC3C8E7 /* Pods-Custom Workout Generator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,6 +385,7 @@
 		};
 		AA122E1F225D5C4000757B6B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C332C164D310970BAAFD9015 /* Pods-Custom Workout Generator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

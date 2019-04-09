@@ -1,0 +1,6 @@
+framework module Pods_Custom_Workout_Generator {
+  umbrella header "Pods-Custom Workout Generator-umbrella.h"
+
+  export *
+  module * { export * }
+}
