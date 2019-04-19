@@ -13,6 +13,9 @@
 		AA122E16225D5C4000757B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA122E15225D5C4000757B6B /* Assets.xcassets */; };
 		AA122E19225D5C4000757B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E17225D5C4000757B6B /* LaunchScreen.storyboard */; };
 		AA122E22225D5F1700757B6B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E21225D5F1700757B6B /* Authentication.storyboard */; };
+		AAB15D912269529100B2400F /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D902269529100B2400F /* Workout.swift */; };
+		AAB15D932269533300B2400F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D922269533300B2400F /* Exercise.swift */; };
+		AAB15D95226956D900B2400F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D94226956D900B2400F /* Data.swift */; };
 		E43E4C6AE9A9ADED3A267AA7 /* Pods_Custom_Workout_Generator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29067B3C8F41C829D6D90C71 /* Pods_Custom_Workout_Generator.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		AA122E18225D5C4000757B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA122E1A225D5C4000757B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA122E21225D5F1700757B6B /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		AAB15D902269529100B2400F /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		AAB15D922269533300B2400F /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		AAB15D94226956D900B2400F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C332C164D310970BAAFD9015 /* Pods-Custom Workout Generator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom Workout Generator.release.xcconfig"; path = "Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +69,7 @@
 		AA122E0D225D5C3F00757B6B /* Custom Workout Generator */ = {
 			isa = PBXGroup;
 			children = (
+				AAB15D8F2269528500B2400F /* Model */,
 				AA122E0E225D5C3F00757B6B /* AppDelegate.swift */,
 				AA122E10225D5C3F00757B6B /* ViewController.swift */,
 				AA122E15225D5C4000757B6B /* Assets.xcassets */,
@@ -82,13 +89,22 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		AAB15D8F2269528500B2400F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAB15D902269529100B2400F /* Workout.swift */,
+				AAB15D922269533300B2400F /* Exercise.swift */,
+				AAB15D94226956D900B2400F /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D5250EDC5AA4DD39B8739C82 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				362E73315B1B02626EC3C8E7 /* Pods-Custom Workout Generator.debug.xcconfig */,
 				C332C164D310970BAAFD9015 /* Pods-Custom Workout Generator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -222,7 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA122E11225D5C3F00757B6B /* ViewController.swift in Sources */,
+				AAB15D95226956D900B2400F /* Data.swift in Sources */,
+				AAB15D932269533300B2400F /* Exercise.swift in Sources */,
 				AA122E0F225D5C3F00757B6B /* AppDelegate.swift in Sources */,
+				AAB15D912269529100B2400F /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
