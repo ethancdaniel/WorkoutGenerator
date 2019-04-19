@@ -6,6 +6,6 @@ target 'Custom Workout Generator' do
   use_frameworks!
 
   # Pods for Custom Workout Generator
-pod 'SideMenu'
+pod 'ChameleonFramework/Swift'
 
 end

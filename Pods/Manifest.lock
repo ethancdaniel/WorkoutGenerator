@@ -1,16 +1,18 @@
 PODS:
-  - SideMenu (5.0.3)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
 
 DEPENDENCIES:
-  - SideMenu
+  - ChameleonFramework/Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - SideMenu
+    - ChameleonFramework
 
 SPEC CHECKSUMS:
-  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
 
-PODFILE CHECKSUM: b433ac49684e0c544c6b1d5d956a28bf3b9da8ba
+PODFILE CHECKSUM: d5bfe26fcfb035672ff4b4ef89f905d696d8ffef
 
 COCOAPODS: 1.6.0
