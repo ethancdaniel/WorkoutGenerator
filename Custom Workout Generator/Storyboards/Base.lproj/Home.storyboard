@@ -13,7 +13,6 @@
         <!--Navigation Controller-->
         <scene sceneID="tGB-a9-4ec">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kot-ti-S4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="yDe-dv-hHu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jMp-uo-uHX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -23,10 +22,11 @@
                         <segue destination="ZfA-Y1-Sc9" kind="relationship" relationship="rootViewController" id="gEZ-Fi-drH"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kot-ti-S4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1572" y="-553"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Workout Type-->
         <scene sceneID="6Ge-e5-ZOi">
             <objects>
                 <viewController id="ZfA-Y1-Sc9" customClass="ViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,33 +35,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k2s-po-Mni">
-                                <rect key="frame" x="0.0" y="104" width="414" height="896"/>
+                                <rect key="frame" x="16" y="104" width="382" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6ss-9j-jOw">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="workout_option" id="QFU-yx-VlI" customClass="WorkoutCollectionViewCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cod-yz-9iE">
-                                                    <rect key="frame" x="4" y="14.5" width="42" height="21"/>
+                                                    <rect key="frame" x="29" y="40" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Cod-yz-9iE" firstAttribute="centerX" secondItem="QFU-yx-VlI" secondAttribute="centerX" id="G3o-l9-UXk"/>
-                                            <constraint firstItem="Cod-yz-9iE" firstAttribute="centerY" secondItem="QFU-yx-VlI" secondAttribute="centerY" id="RZb-QV-yVI"/>
+                                            <constraint firstItem="Cod-yz-9iE" firstAttribute="centerY" secondItem="QFU-yx-VlI" secondAttribute="centerY" id="90u-lY-txw"/>
+                                            <constraint firstItem="Cod-yz-9iE" firstAttribute="centerX" secondItem="QFU-yx-VlI" secondAttribute="centerX" id="op4-V7-wSW"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="workoutName" destination="Cod-yz-9iE" id="7nn-ew-3sX"/>
@@ -72,14 +73,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="k2s-po-Mni" firstAttribute="width" secondItem="Zm5-7s-5ri" secondAttribute="width" id="Lns-tR-U9d"/>
+                            <constraint firstItem="F60-g9-pGJ" firstAttribute="trailing" secondItem="k2s-po-Mni" secondAttribute="trailing" constant="16" id="FRf-bk-Qkb"/>
                             <constraint firstItem="k2s-po-Mni" firstAttribute="height" secondItem="Zm5-7s-5ri" secondAttribute="height" id="TFD-w4-I5E"/>
                             <constraint firstItem="k2s-po-Mni" firstAttribute="top" secondItem="F60-g9-pGJ" secondAttribute="top" constant="16" id="deq-YY-adj"/>
                             <constraint firstItem="k2s-po-Mni" firstAttribute="centerX" secondItem="Zm5-7s-5ri" secondAttribute="centerX" id="jaw-7N-8iX"/>
+                            <constraint firstItem="k2s-po-Mni" firstAttribute="leading" secondItem="F60-g9-pGJ" secondAttribute="leading" constant="16" id="mhj-2z-76D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F60-g9-pGJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FM7-wV-6Vh"/>
+                    <navigationItem key="navigationItem" title="Select Workout Type" id="FM7-wV-6Vh"/>
                     <connections>
                         <outlet property="workoutOptions" destination="k2s-po-Mni" id="Qno-MW-Jy7"/>
                     </connections>
