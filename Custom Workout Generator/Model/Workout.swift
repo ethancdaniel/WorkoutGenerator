@@ -11,11 +11,12 @@ import Foundation
 class Workout {
     let name: String
     let bodyParts: [Parts]
-    let exercises: [Exercise]?
+    let exercises: [Exercise]
     
     init(name: String, bodyParts: [Parts]) {
         self.name = name
         self.bodyParts = bodyParts
+        self.exercises = []
     }
     
 }

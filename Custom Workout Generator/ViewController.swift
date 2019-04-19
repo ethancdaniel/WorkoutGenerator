@@ -9,21 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    @IBOutlet weak var workoutTypeCollectionView: UICollectionView!
+    let data = Data()
+    @IBOutlet weak var workoutOptions: UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        workoutOptions.delegate = self
+        workoutOptions.dataSource = self
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+        return data.workouts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workout_option", for: indexPath) as? WorkoutCollectionViewCell {
+            cell.workoutName.text = data.workouts[indexPath.item].name
+            return cell
+        }
+        return UICollectionViewCell()
     }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 
 
 }

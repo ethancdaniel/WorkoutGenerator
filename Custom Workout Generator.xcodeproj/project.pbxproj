@@ -16,6 +16,7 @@
 		AAB15D912269529100B2400F /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D902269529100B2400F /* Workout.swift */; };
 		AAB15D932269533300B2400F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D922269533300B2400F /* Exercise.swift */; };
 		AAB15D95226956D900B2400F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D94226956D900B2400F /* Data.swift */; };
+		AAB15D9822695E7C00B2400F /* WorkoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D9722695E7C00B2400F /* WorkoutCollectionViewCell.swift */; };
 		E43E4C6AE9A9ADED3A267AA7 /* Pods_Custom_Workout_Generator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29067B3C8F41C829D6D90C71 /* Pods_Custom_Workout_Generator.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		AAB15D902269529100B2400F /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		AAB15D922269533300B2400F /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		AAB15D94226956D900B2400F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		AAB15D9722695E7C00B2400F /* WorkoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		C332C164D310970BAAFD9015 /* Pods-Custom Workout Generator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom Workout Generator.release.xcconfig"; path = "Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 		AA122E0D225D5C3F00757B6B /* Custom Workout Generator */ = {
 			isa = PBXGroup;
 			children = (
+				AAB15D9622695E6C00B2400F /* View */,
 				AAB15D8F2269528500B2400F /* Model */,
 				AA122E0E225D5C3F00757B6B /* AppDelegate.swift */,
 				AA122E10225D5C3F00757B6B /* ViewController.swift */,
@@ -97,6 +100,14 @@
 				AAB15D94226956D900B2400F /* Data.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AAB15D9622695E6C00B2400F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAB15D9722695E7C00B2400F /* WorkoutCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D5250EDC5AA4DD39B8739C82 /* Pods */ = {
@@ -239,6 +250,7 @@
 			files = (
 				AA122E11225D5C3F00757B6B /* ViewController.swift in Sources */,
 				AAB15D95226956D900B2400F /* Data.swift in Sources */,
+				AAB15D9822695E7C00B2400F /* WorkoutCollectionViewCell.swift in Sources */,
 				AAB15D932269533300B2400F /* Exercise.swift in Sources */,
 				AA122E0F225D5C3F00757B6B /* AppDelegate.swift in Sources */,
 				AAB15D912269529100B2400F /* Workout.swift in Sources */,
