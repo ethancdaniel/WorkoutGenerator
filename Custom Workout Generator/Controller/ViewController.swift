@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     let data = Data()
+    var selectedCell: Int?
     @IBOutlet weak var workoutOptions: UICollectionView!
     
     override func viewDidLoad() {
@@ -28,6 +29,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCell = indexPath.item
+        performSegue(withIdentifier: "CreatedWorkout", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UICollectionViewCell, let dest = segue.destination as? WorkoutTableViewController {
+            dest.workoutIndex = selectedCell
+        }
     }
     
 

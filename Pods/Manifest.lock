@@ -4,15 +4,20 @@ PODS:
     - ChameleonFramework/Default
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - ChameleonFramework
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
 
-PODFILE CHECKSUM: d5bfe26fcfb035672ff4b4ef89f905d696d8ffef
+PODFILE CHECKSUM: 9291017207e7b2b628b70de978403f3309e5b899
 
 COCOAPODS: 1.6.0

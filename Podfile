@@ -6,6 +6,6 @@ target 'Custom Workout Generator' do
   use_frameworks!
 
   # Pods for Custom Workout Generator
-pod 'ChameleonFramework/Swift'
+pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
 end

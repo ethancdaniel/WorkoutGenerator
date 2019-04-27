@@ -52,7 +52,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cod-yz-9iE">
-                                                    <rect key="frame" x="29" y="40" width="42" height="21"/>
+                                                    <rect key="frame" x="29" y="39.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -84,11 +84,39 @@
                     <navigationItem key="navigationItem" title="Select Workout Type" id="FM7-wV-6Vh"/>
                     <connections>
                         <outlet property="workoutOptions" destination="k2s-po-Mni" id="Qno-MW-Jy7"/>
+                        <segue destination="Vjw-Ea-HT1" kind="showDetail" identifier="CreatedWorkout" id="9aj-Gu-KIN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFp-Kr-PHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-700" y="-553.125"/>
+            <point key="canvasLocation" x="-677" y="-553"/>
+        </scene>
+        <!--Workout Table View Controller-->
+        <scene sceneID="PsP-wp-11f">
+            <objects>
+                <viewController id="Vjw-Ea-HT1" customClass="WorkoutTableViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="76a-3Q-fuO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWx-7L-4h2">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pWx-7L-4h2" firstAttribute="centerY" secondItem="s8q-ge-GxE" secondAttribute="centerY" id="LDR-as-QcI"/>
+                            <constraint firstItem="pWx-7L-4h2" firstAttribute="centerX" secondItem="s8q-ge-GxE" secondAttribute="centerX" id="UEe-VR-tdf"/>
+                            <constraint firstItem="pWx-7L-4h2" firstAttribute="width" secondItem="76a-3Q-fuO" secondAttribute="width" id="Z72-hF-iNx"/>
+                            <constraint firstItem="pWx-7L-4h2" firstAttribute="height" secondItem="76a-3Q-fuO" secondAttribute="height" id="z2w-HM-8YW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="s8q-ge-GxE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUu-gk-N9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="-553"/>
         </scene>
     </scenes>
 </document>
