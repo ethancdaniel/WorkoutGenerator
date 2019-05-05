@@ -30,6 +30,31 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gn2-o8-bBY">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutCell" id="vsi-8l-5VX" customClass="WorkoutNamesTableViewCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vsi-8l-5VX" id="f18-bi-4c6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRn-mU-0ju">
+                                                            <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="aRn-mU-0ju" firstAttribute="leading" secondItem="f18-bi-4c6" secondAttribute="leadingMargin" id="QtR-ow-ahW"/>
+                                                        <constraint firstItem="aRn-mU-0ju" firstAttribute="centerY" secondItem="f18-bi-4c6" secondAttribute="centerY" id="awf-za-4ev"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="workoutName" destination="aRn-mU-0ju" id="lYh-xu-3Kl"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.8162571756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -40,7 +65,7 @@
                                     <constraint firstItem="gn2-o8-bBY" firstAttribute="centerX" secondItem="jPD-HF-v9V" secondAttribute="centerX" id="hqv-1K-HQe"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3he-g6-PXq" userLabel="First view">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3he-g6-PXq" userLabel="First view">
                                 <rect key="frame" x="0.0" y="419" width="414" height="448"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFV-L4-BHJ">
@@ -95,6 +120,7 @@
                     <connections>
                         <outlet property="personalStats" destination="3he-g6-PXq" id="Qhq-dL-Los"/>
                         <outlet property="savedWorkouts" destination="jPD-HF-v9V" id="0Lo-MO-aki"/>
+                        <outlet property="savedWorkoutsTableView" destination="gn2-o8-bBY" id="ZBY-er-yPC"/>
                         <outlet property="statsButton" destination="dwP-pG-zDv" id="Rh0-iy-qA8"/>
                         <outlet property="welcome" destination="EbY-RZ-6Pb" id="yso-l0-Ktd"/>
                         <outlet property="workoutsButton" destination="OFk-Bg-dDS" id="1Fc-d7-Iyh"/>
