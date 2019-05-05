@@ -110,16 +110,13 @@
 		AA135E7422698974002F5722 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				8E7A396D227E5DDF00367B8F /* MuscleSelectionViewController.swift */,
 				AA122E10225D5C3F00757B6B /* ViewController.swift */,
 				AA135E7522698990002F5722 /* WorkoutTableViewController.swift */,
-=======
 				DD59BF0B227E4C1D00F94D92 /* WorkoutSelection */,
 				DD59BF0E227E654600F94D92 /* WorkoutDisplay */,
 				AA726977227E493F00159A72 /* SignIn.swift */,
 				AA726979227E494A00159A72 /* SignUp.swift */,
->>>>>>> master
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,11 +134,8 @@
 		AAB15D9622695E6C00B2400F /* View */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				AAB15D9722695E7C00B2400F /* WorkoutCollectionViewCell.swift */,
 				8E0D8013227E7924008F0DCB /* MuscleCollectionViewCell.swift */,
-=======
->>>>>>> master
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,11 +310,8 @@
 				AAB15D9822695E7C00B2400F /* WorkoutCollectionViewCell.swift in Sources */,
 				8E0D8014227E7924008F0DCB /* MuscleCollectionViewCell.swift in Sources */,
 				AAB15D932269533300B2400F /* Exercise.swift in Sources */,
-<<<<<<< HEAD
 				8E7A396E227E5DDF00367B8F /* MuscleSelectionViewController.swift in Sources */,
-=======
 				DD59BF0D227E50DE00F94D92 /* WorkoutSelectorViewController.swift in Sources */,
->>>>>>> master
 				AA122E0F225D5C3F00757B6B /* AppDelegate.swift in Sources */,
 				AAB15D912269529100B2400F /* Workout.swift in Sources */,
 				AA135E7622698991002F5722 /* WorkoutTableViewController.swift in Sources */,
