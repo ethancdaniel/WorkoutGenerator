@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let data = Data()
     var currentWorkout: [Exercise] = []
     var exerciseToDisplay: Exercise?
+    var ref: DatabaseReference!
     
     @IBOutlet var exercisesTableView: UITableView!
     
@@ -21,6 +23,7 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
         exercisesTableView.dataSource = self
         exercisesTableView.delegate = self
         exercisesTableView.rowHeight = 60
+        ref = Database.database().reference()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +64,13 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
             textField.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
         }
         let action = UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            guard let textField = alert?.textFields![0] else { return }
+            guard let text = alert?.textFields![0].text else { return }
+            if let user = Auth.auth().currentUser {
+                let userid = user.uid
+                for exercise in self.currentWorkout {
+                    self.ref.child("Saved Workouts").child(user.uid).child(text).child(exercise.name).setValue(["isCompound": exercise.compound])
+                }
+            }
             self.present(savedConfirmation, animated: true, completion: nil)
         })
         action.isEnabled = false
