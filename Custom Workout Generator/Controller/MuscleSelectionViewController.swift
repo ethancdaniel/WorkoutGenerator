@@ -9,15 +9,16 @@
 import UIKit
 
 class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    var data = Data()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return data.parts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "muscleCell", for: indexPath) as? MuscleCollectionViewCell {
-            cell.imageView.image = UIImage(named: data.images[indexPath.row])
-            cell.imageView.contentMode = .scaleAspectFill
+            cell.muscleButton.tag = indexPath.item
+            cell.muscleButton.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
             return cell
         }
         return UICollectionViewCell()
