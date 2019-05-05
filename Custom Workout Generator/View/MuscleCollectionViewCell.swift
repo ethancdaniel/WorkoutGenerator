@@ -10,5 +10,6 @@ import UIKit
 
 class MuscleCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var muscleButton: UIButton!
+    @IBOutlet weak var muscleLabel: UILabel!
+    
 }
