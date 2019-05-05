@@ -115,13 +115,37 @@
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseCell" id="2o6-Z5-vqn">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseCell" rowHeight="70" id="2o6-Z5-vqn" customClass="WorkoutTableViewControllerCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2o6-Z5-vqn" id="WOn-tM-YA7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ9-Fk-Erf">
+                                                    <rect key="frame" x="20" y="11" width="113.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets x Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05y-ek-jjx">
+                                                    <rect key="frame" x="20" y="38" width="89.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="05y-ek-jjx" firstAttribute="leading" secondItem="WOn-tM-YA7" secondAttribute="leadingMargin" id="IB3-xR-c8e"/>
+                                                <constraint firstItem="cJ9-Fk-Erf" firstAttribute="leading" secondItem="WOn-tM-YA7" secondAttribute="leadingMargin" id="Nhv-FL-H2c"/>
+                                                <constraint firstItem="cJ9-Fk-Erf" firstAttribute="top" secondItem="WOn-tM-YA7" secondAttribute="topMargin" id="nIf-Al-JRJ"/>
+                                                <constraint firstItem="05y-ek-jjx" firstAttribute="top" secondItem="cJ9-Fk-Erf" secondAttribute="bottom" constant="6" id="xZ4-A0-5xR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="exerciseNameLabel" destination="cJ9-Fk-Erf" id="b4i-m7-OmL"/>
+                                            <outlet property="setsAndRepsLabel" destination="05y-ek-jjx" id="mdL-Th-yh1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -138,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUu-gk-N9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="-553"/>
+            <point key="canvasLocation" x="82.608695652173921" y="-553.125"/>
         </scene>
         <!--Muscle Selection View Controller-->
         <scene sceneID="szx-b0-T7P">
