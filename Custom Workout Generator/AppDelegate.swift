@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        if let userID = Auth.auth().currentUser?.uid {
+            print(userID)
+            let rootVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as UIViewController
+            rootVC.view.frame = UIScreen.main.bounds
+            UIView.transition(with: self.window!, duration: 0.25, options: .transitionCrossDissolve, animations: {
+                self.window?.rootViewController = rootVC
+            }, completion: nil)
+        }
+        
         return true
     }
 
