@@ -46,6 +46,8 @@ class Data {
                      Exercise(name: "Body Saw", parts: [Parts.abdominals, Parts.obliques], isCompound: false),
                      Exercise(name: "Farmer Walk", parts: [Parts.forearms], isCompound: false),
                      Exercise(name: "Wrist Roller", parts: [Parts.forearms], isCompound: false),
+                     Exercise(name: "Wrist Curls", parts: [Parts.forearms], isCompound: false),
+                     Exercise(name: "Reverse Curls", parts: [Parts.forearms], isCompound: false),
                      Exercise(name: "Back Squat", parts: [Parts.quadriceps, Parts.glutes], isCompound: true),
                      Exercise(name: "Zercher Squat", parts: [Parts.quadriceps, Parts.glutes], isCompound: true),
                      Exercise(name: "Goblet Squat", parts: [Parts.quadriceps, Parts.glutes], isCompound: false),

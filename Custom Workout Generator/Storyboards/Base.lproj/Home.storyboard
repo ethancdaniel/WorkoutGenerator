@@ -99,7 +99,7 @@
                     <navigationItem key="navigationItem" title="Select Workout Type" id="FM7-wV-6Vh"/>
                     <connections>
                         <outlet property="workoutOptions" destination="k2s-po-Mni" id="Qno-MW-Jy7"/>
-                        <segue destination="Vjw-Ea-HT1" kind="showDetail" identifier="CreatedWorkout" id="9aj-Gu-KIN"/>
+                        <segue destination="Vjw-Ea-HT1" kind="show" identifier="CreatedWorkout" id="9aj-Gu-KIN"/>
                         <segue destination="eGE-em-Pkx" kind="show" identifier="createOwn" id="sWY-4Z-KD6"/>
                     </connections>
                 </viewController>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="-678.26086956521749" y="-553.125"/>
         </scene>
-        <!--Workout Table View Controller-->
+        <!--Custom Workout-->
         <scene sceneID="PsP-wp-11f">
             <objects>
                 <viewController id="Vjw-Ea-HT1" customClass="WorkoutTableViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWx-7L-4h2">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="27" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseCell" rowHeight="70" id="2o6-Z5-vqn" customClass="WorkoutTableViewControllerCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
@@ -163,6 +163,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s8q-ge-GxE"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Custom Workout" id="itE-a9-mm5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Q7-Qk-qoD">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="Vjw-Ea-HT1" id="wVe-zY-jJL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="exercisesTableView" destination="pWx-7L-4h2" id="ozN-mK-rlJ"/>
                         <segue destination="mhT-Yu-xq5" kind="show" identifier="workoutToExercise" id="Noe-HW-gkY"/>
@@ -172,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="586" y="-553"/>
         </scene>
-        <!--View Controller-->
+        <!--Exercise View Controller-->
         <scene sceneID="YHa-Ks-sTp">
             <objects>
-                <viewController id="mhT-Yu-xq5" sceneMemberID="viewController">
+                <viewController id="mhT-Yu-xq5" customClass="ExerciseViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NN5-68-Nf4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,6 +201,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQX-Tb-uo2"/>
                     </view>
+                    <connections>
+                        <outlet property="exerciseName" destination="z2Q-mu-ic2" id="ztq-S4-xd0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnl-ds-LJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

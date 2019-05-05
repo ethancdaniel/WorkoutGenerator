@@ -12,6 +12,7 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
     
     let data = Data()
     var currentWorkout: [Exercise] = []
+    var exerciseToDisplay: Exercise?
     
     @IBOutlet var exercisesTableView: UITableView!
     
@@ -22,9 +23,6 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
         exercisesTableView.rowHeight = 60
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentWorkout.count
     }
@@ -42,4 +40,48 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        exerciseToDisplay = currentWorkout[indexPath.row]
+        performSegue(withIdentifier: "workoutToExercise", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? ExerciseViewController {
+            dest.exercise = exerciseToDisplay!
+        }
+    }
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Save Workout", message: "Enter a name for this workout", preferredStyle: .alert)
+        let savedConfirmation = UIAlertController(title: "Workout Saved!", message: "", preferredStyle: .alert)
+        savedConfirmation.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addTextField { (textField) in
+            textField.placeholder = "Cool workout"
+            textField.addTarget(alert, action: #selector(alert.textDidChangeInLoginAlert), for: .editingChanged)
+        }
+        let action = UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            guard let textField = alert?.textFields![0] else { return }
+            self.present(savedConfirmation, animated: true, completion: nil)
+        })
+        action.isEnabled = false
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
+
+extension UIAlertController {
+    
+    func isValidText(_ text: String) -> Bool {
+        return text != nil && text != ""
+    }
+    
+    @objc func textDidChangeInLoginAlert() {
+        if let text = textFields?[0].text,
+            let action = actions.last {
+            action.isEnabled = isValidText(text)
+        }
+    }
+}
+
