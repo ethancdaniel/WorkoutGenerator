@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGE-em-Pkx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yDe-dv-hHu">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
         <!--Select Workout Type-->
         <scene sceneID="6Ge-e5-ZOi">
             <objects>
-                <viewController id="ZfA-Y1-Sc9" customClass="ViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZfA-Y1-Sc9" customClass="WorkoutSelectorViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zm5-7s-5ri">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,9 @@
                                 <state key="normal" title="Create Your Own!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createOwnPressed:" destination="ZfA-Y1-Sc9" eventType="touchUpInside" id="M2B-f6-6bH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,11 +119,11 @@
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseCell" rowHeight="70" id="2o6-Z5-vqn" customClass="WorkoutTableViewControllerCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseCell" rowHeight="70" id="2o6-Z5-vqn" customClass="WorkoutTableViewControllerCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2o6-Z5-vqn" id="WOn-tM-YA7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ9-Fk-Erf">
@@ -160,10 +163,41 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s8q-ge-GxE"/>
                     </view>
+                    <connections>
+                        <outlet property="exercisesTableView" destination="pWx-7L-4h2" id="ozN-mK-rlJ"/>
+                        <segue destination="mhT-Yu-xq5" kind="show" identifier="workoutToExercise" id="Noe-HW-gkY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUu-gk-N9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82.608695652173921" y="-553.125"/>
+            <point key="canvasLocation" x="586" y="-553"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YHa-Ks-sTp">
+            <objects>
+                <viewController id="mhT-Yu-xq5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NN5-68-Nf4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chicken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2Q-mu-ic2">
+                                <rect key="frame" x="177" y="437.5" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z2Q-mu-ic2" firstAttribute="centerX" secondItem="NN5-68-Nf4" secondAttribute="centerX" id="lNW-wq-b6B"/>
+                            <constraint firstItem="z2Q-mu-ic2" firstAttribute="centerY" secondItem="NN5-68-Nf4" secondAttribute="centerY" id="tIe-8C-CNB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQX-Tb-uo2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mnl-ds-LJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="-553"/>
         </scene>
         <!--Select Muscle Groups-->
         <scene sceneID="szx-b0-T7P">
@@ -383,11 +417,12 @@
                         <outlet property="shoulders" destination="Nfs-vO-6fb" id="SAq-ib-2NT"/>
                         <outlet property="traps" destination="JwX-EW-y1g" id="bhe-bn-XXf"/>
                         <outlet property="triceps" destination="m7V-HR-Ud3" id="SQK-HW-1xU"/>
+                        <segue destination="Vjw-Ea-HT1" kind="show" identifier="selectorToCreatedWorkout" id="MqY-46-xV9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hq-Kv-Ag1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82.608695652173921" y="150.66964285714286"/>
+            <point key="canvasLocation" x="83" y="177"/>
         </scene>
     </scenes>
     <resources>
@@ -407,4 +442,7 @@
         <image name="Traps" width="172" height="161"/>
         <image name="Triceps" width="339" height="114"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9aj-Gu-KIN"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -22,12 +22,14 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
         exercisesTableView.rowHeight = 60
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentWorkout.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO
         if let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell") as? WorkoutTableViewControllerCell {
             let exercise = currentWorkout[indexPath.row]
             cell.exerciseNameLabel.text = exercise.name

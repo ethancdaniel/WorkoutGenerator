@@ -22,6 +22,9 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func createOwnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "createOwn", sender: self)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.workouts.count
     }
@@ -35,18 +38,15 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //selectedCell = indexPath.item
         generateWorkout(workoutIndex: indexPath.item)
-        print(generatedWorkout)
-        //performSegue(withIdentifier: "CreatedWorkout", sender: self)
+        performSegue(withIdentifier: "CreatedWorkout", sender: self)
     }
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? UICollectionViewCell, let dest = segue.destination as? WorkoutTableViewController {
-            //dest.workoutIndex = selectedCell
-            //dest.currentWorkout = generatedWorkout
+        if let dest = segue.destination as? WorkoutTableViewController {
+            dest.currentWorkout = generatedWorkout
         }
     }
     
@@ -85,17 +85,4 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
             }
         }
     }
-    // ["Dips", "Close-Grip Bench Press", "Skullcrushers", "Rope Tricep Extension", "Barbell Shoulder Press", "Incline Bench Press"]
-    // ["Bench Press", "Dips", "Incline Bench Press", "Overhead Tricep Extension", "Rear Lateral Raise", "Dumbbell Shoulder Press"]
-    // ["Close-Grip Bench Press", "Dips", "Bench Press", "Pushups", "Barbell Shoulder Press", "Dumbbell Lateral Raise"]
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
