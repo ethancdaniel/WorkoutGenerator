@@ -80,6 +80,8 @@ class Data {
     
     let classPart = [Parts.abdominals, Parts.biceps, Parts.calves, Parts.chest, Parts.forearms, Parts.glutes, Parts.hamstrings, Parts.lats, Parts.lowerBack, Parts.obliques, Parts.quadriceps, Parts.shoulders, Parts.trapezius, Parts.triceps]
     
+    let hasCompounds = [Parts.abdominals, Parts.lats, Parts.glutes, Parts.hamstrings, Parts.lats, Parts.quadriceps, Parts.shoulders, Parts.chest]
+    
 }
 
 enum Parts : String {
