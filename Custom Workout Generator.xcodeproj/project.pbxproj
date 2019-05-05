@@ -16,6 +16,7 @@
 		AA122E16225D5C4000757B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA122E15225D5C4000757B6B /* Assets.xcassets */; };
 		AA122E19225D5C4000757B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E17225D5C4000757B6B /* LaunchScreen.storyboard */; };
 		AA122E22225D5F1700757B6B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA122E21225D5F1700757B6B /* Authentication.storyboard */; };
+		AA57383C227FA11F00D5EDFA /* WorkoutNamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA57383B227FA11F00D5EDFA /* WorkoutNamesTableViewCell.swift */; };
 		AA726978227E493F00159A72 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA726977227E493F00159A72 /* SignIn.swift */; };
 		AA72697A227E494A00159A72 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA726979227E494A00159A72 /* SignUp.swift */; };
 		AAB15D912269529100B2400F /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D902269529100B2400F /* Workout.swift */; };
@@ -47,6 +48,7 @@
 		AA122E18225D5C4000757B6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA122E1A225D5C4000757B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA122E21225D5F1700757B6B /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		AA57383B227FA11F00D5EDFA /* WorkoutNamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNamesTableViewCell.swift; sourceTree = "<group>"; };
 		AA726977227E493F00159A72 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		AA726979227E494A00159A72 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		AAB15D902269529100B2400F /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				AABE219C227ECDD50038CC16 /* SavedWorkoutsViewController.swift */,
+				AA57383B227FA11F00D5EDFA /* WorkoutNamesTableViewCell.swift */,
 			);
 			path = "Saved Workouts";
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				AABE219D227ECDD50038CC16 /* SavedWorkoutsViewController.swift in Sources */,
 				AAB15D912269529100B2400F /* Workout.swift in Sources */,
 				8EA0485B227EA4F8002AE1BA /* WorkoutCollectionViewCell.swift in Sources */,
+				AA57383C227FA11F00D5EDFA /* WorkoutNamesTableViewCell.swift in Sources */,
 				AA72697A227E494A00159A72 /* SignUp.swift in Sources */,
 				AA726978227E493F00159A72 /* SignIn.swift in Sources */,
 				8EA04859227EA4C7002AE1BA /* WorkoutTableViewController.swift in Sources */,
