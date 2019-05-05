@@ -53,7 +53,7 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
     func generateWorkout(workoutIndex: Int) {
         let parts = data.workouts[workoutIndex].bodyParts
         let numParts = parts.count
-        let exPerPart = (6 / numParts)
+        let exPerPart = Int(ceil(Double(6 / numParts)))
         var compounds = 0
         var needCompound = true
         var chosenExercises: [Int] = []
