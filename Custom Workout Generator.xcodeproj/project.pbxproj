@@ -106,15 +106,10 @@
 		AA135E7422698974002F5722 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				DD59BF0B227E4C1D00F94D92 /* WorkoutSelection */,
 				DD59BF0E227E654600F94D92 /* WorkoutDisplay */,
-=======
-				AA122E10225D5C3F00757B6B /* ViewController.swift */,
-				AA135E7522698990002F5722 /* WorkoutTableViewController.swift */,
 				AA726977227E493F00159A72 /* SignIn.swift */,
 				AA726979227E494A00159A72 /* SignUp.swift */,
->>>>>>> 5c667a1b20af078d3a5cbf5b2554b272f12e7449
 			);
 			path = Controller;
 			sourceTree = "<group>";
