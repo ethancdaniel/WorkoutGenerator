@@ -7,5 +7,8 @@ target 'Custom Workout Generator' do
 
   # Pods for Custom Workout Generator
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
 end
