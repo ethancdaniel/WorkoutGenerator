@@ -10,5 +10,4 @@ import UIKit
 
 class WorkoutCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var workoutName: UILabel!
-    
 }

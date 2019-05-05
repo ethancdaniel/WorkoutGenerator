@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yDe-dv-hHu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGE-em-Pkx">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,14 +70,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBt-OJ-0FJ">
+                                <rect key="frame" x="92" y="639" width="231" height="88"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Create Your Own!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F60-g9-pGJ" firstAttribute="trailing" secondItem="k2s-po-Mni" secondAttribute="trailing" constant="16" id="FRf-bk-Qkb"/>
+                            <constraint firstItem="F60-g9-pGJ" firstAttribute="bottom" secondItem="SBt-OJ-0FJ" secondAttribute="bottom" constant="135" id="JFi-fO-6iR"/>
                             <constraint firstItem="k2s-po-Mni" firstAttribute="height" secondItem="Zm5-7s-5ri" secondAttribute="height" id="TFD-w4-I5E"/>
                             <constraint firstItem="k2s-po-Mni" firstAttribute="top" secondItem="F60-g9-pGJ" secondAttribute="top" constant="16" id="deq-YY-adj"/>
                             <constraint firstItem="k2s-po-Mni" firstAttribute="centerX" secondItem="Zm5-7s-5ri" secondAttribute="centerX" id="jaw-7N-8iX"/>
+                            <constraint firstItem="SBt-OJ-0FJ" firstAttribute="centerX" secondItem="k2s-po-Mni" secondAttribute="centerX" id="k5k-8o-EQk"/>
                             <constraint firstItem="k2s-po-Mni" firstAttribute="leading" secondItem="F60-g9-pGJ" secondAttribute="leading" constant="16" id="mhj-2z-76D"/>
+                            <constraint firstItem="SBt-OJ-0FJ" firstAttribute="top" secondItem="F60-g9-pGJ" secondAttribute="top" constant="551" id="p8L-9s-HAL"/>
+                            <constraint firstItem="SBt-OJ-0FJ" firstAttribute="leading" secondItem="F60-g9-pGJ" secondAttribute="leading" constant="92" id="umf-My-W1h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F60-g9-pGJ"/>
                     </view>
@@ -89,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFp-Kr-PHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-677" y="-553"/>
+            <point key="canvasLocation" x="-678.26086956521749" y="-553.125"/>
         </scene>
         <!--Workout Table View Controller-->
         <scene sceneID="PsP-wp-11f">
@@ -102,6 +114,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWx-7L-4h2">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseCell" id="2o6-Z5-vqn">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2o6-Z5-vqn" id="WOn-tM-YA7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,5 +140,239 @@
             </objects>
             <point key="canvasLocation" x="84" y="-553"/>
         </scene>
+        <!--Muscle Selection View Controller-->
+        <scene sceneID="szx-b0-T7P">
+            <objects>
+                <viewController id="eGE-em-Pkx" customClass="MuscleSelectionViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KP0-kJ-ra1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im9-al-GSY" userLabel="Body">
+                                <rect key="frame" x="0.0" y="130" width="414" height="409"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="409" id="Iyq-q1-s51"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Human Body"/>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfs-vO-6fb" userLabel="Shoulders">
+                                <rect key="frame" x="260" y="214" width="104" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oQa-Qt-3cp"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Shoulders"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAb-zQ-hQh" userLabel="Abs">
+                                <rect key="frame" x="294" y="247" width="36" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="QIF-Ik-mVw"/>
+                                    <constraint firstAttribute="width" constant="36" id="r1f-7X-snx"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Abs"/>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8g-3m-DuL" userLabel="Biceps">
+                                <rect key="frame" x="254" y="239" width="116" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Yu5-QI-xY7"/>
+                                </constraints>
+                                <state key="normal" image="Biceps"/>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcM-Bi-y1s" userLabel="Chest">
+                                <rect key="frame" x="279" y="216" width="66" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="7Sm-2S-qxc"/>
+                                </constraints>
+                                <state key="normal" image="Chest"/>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Foe-at-fjO" userLabel="Forearms">
+                                <rect key="frame" x="238" y="270" width="148" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="hmE-76-yoK"/>
+                                </constraints>
+                                <state key="normal" image="Forearms"/>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-Vb-EuB" userLabel="Obliques">
+                                <rect key="frame" x="280" y="244" width="63" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="JNn-Dz-oM2"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Obliques"/>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxb-kG-582" userLabel="Quads">
+                                <rect key="frame" x="271" y="305" width="81" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="Hew-bX-jcq"/>
+                                </constraints>
+                                <state key="normal" image="Quads"/>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwX-EW-y1g" userLabel="Traps">
+                                <rect key="frame" x="80" y="209" width="59" height="56"/>
+                                <state key="normal" image="Traps"/>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCV-r2-QHk" userLabel="Lats">
+                                <rect key="frame" x="75" y="224" width="68" height="65"/>
+                                <state key="normal" image="Lats"/>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkc-QI-FDh" userLabel="LowerBack">
+                                <rect key="frame" x="89" y="260" width="40" height="60"/>
+                                <state key="normal" image="Lowerback"/>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7V-HR-Ud3" userLabel="Triceps">
+                                <rect key="frame" x="51" y="236" width="117" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="EQa-7U-u0c"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Triceps"/>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf9-Bd-80K" userLabel="Glutes">
+                                <rect key="frame" x="73" y="289" width="73" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="VBe-jB-j5F"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Glutes"/>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJJ-7j-ggl" userLabel="Hamstrings">
+                                <rect key="frame" x="70" y="319" width="79" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="tSL-Y7-VpY"/>
+                                </constraints>
+                                <state key="normal" image="Hamstrings"/>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1i-4p-S7l" userLabel="Calves">
+                                <rect key="frame" x="70" y="407" width="79" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aA8-Jj-5Fm"/>
+                                </constraints>
+                                <state key="normal" image="Calves"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W2b-Pw-6lz">
+                                <rect key="frame" x="32" y="536" width="350" height="313"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jDS-MN-Ios">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="muscleCell" id="G52-fX-Jf9" customClass="MuscleCollectionViewCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zc0-XQ-4qC">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="muscleLabel" destination="Zc0-XQ-4qC" id="amx-z4-SBF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QCV-r2-QHk" firstAttribute="leading" secondItem="S3T-Qs-ne6" secondAttribute="leading" constant="75" id="4Je-ts-tzR"/>
+                            <constraint firstItem="FJJ-7j-ggl" firstAttribute="top" secondItem="QCV-r2-QHk" secondAttribute="bottom" constant="30" id="4Ug-Pf-LE4"/>
+                            <constraint firstItem="vAW-Vb-EuB" firstAttribute="centerX" secondItem="Foe-at-fjO" secondAttribute="centerX" id="8CM-1n-ioN"/>
+                            <constraint firstItem="S3T-Qs-ne6" firstAttribute="trailing" secondItem="YcM-Bi-y1s" secondAttribute="trailing" constant="69" id="8R4-ul-J10"/>
+                            <constraint firstItem="Pkc-QI-FDh" firstAttribute="leading" secondItem="S3T-Qs-ne6" secondAttribute="leading" constant="89" id="B4I-rF-aZs"/>
+                            <constraint firstItem="FJJ-7j-ggl" firstAttribute="leading" secondItem="v1i-4p-S7l" secondAttribute="leading" id="BbF-yq-WcF"/>
+                            <constraint firstItem="tf9-Bd-80K" firstAttribute="top" secondItem="m7V-HR-Ud3" secondAttribute="bottom" constant="14" id="Bbi-Cp-s6t"/>
+                            <constraint firstItem="vAW-Vb-EuB" firstAttribute="top" secondItem="Nfs-vO-6fb" secondAttribute="bottom" id="DNg-7E-dct"/>
+                            <constraint firstItem="tf9-Bd-80K" firstAttribute="centerX" secondItem="FJJ-7j-ggl" secondAttribute="centerX" id="DSS-XA-z0d"/>
+                            <constraint firstItem="Foe-at-fjO" firstAttribute="top" secondItem="YcM-Bi-y1s" secondAttribute="bottom" constant="21" id="EBn-94-hUm"/>
+                            <constraint firstItem="S3T-Qs-ne6" firstAttribute="trailing" secondItem="vxb-kG-582" secondAttribute="trailing" constant="62" id="EvY-RU-O69"/>
+                            <constraint firstItem="YcM-Bi-y1s" firstAttribute="centerX" secondItem="B8g-3m-DuL" secondAttribute="centerX" id="G7f-75-dOk"/>
+                            <constraint firstItem="QCV-r2-QHk" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="180" id="ILb-NI-l7O"/>
+                            <constraint firstItem="tf9-Bd-80K" firstAttribute="top" secondItem="JwX-EW-y1g" secondAttribute="bottom" constant="24" id="INY-9b-86y"/>
+                            <constraint firstItem="aAb-zQ-hQh" firstAttribute="top" secondItem="Nfs-vO-6fb" secondAttribute="bottom" constant="3" id="KZR-jl-iRM"/>
+                            <constraint firstItem="S3T-Qs-ne6" firstAttribute="trailing" secondItem="vAW-Vb-EuB" secondAttribute="trailing" constant="71" id="Kkp-Yw-4nC"/>
+                            <constraint firstItem="JwX-EW-y1g" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="165" id="LW0-I6-up7"/>
+                            <constraint firstItem="im9-al-GSY" firstAttribute="centerX" secondItem="W2b-Pw-6lz" secondAttribute="centerX" id="NX0-zk-JdJ"/>
+                            <constraint firstItem="im9-al-GSY" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="86" id="Ozo-4G-z8N"/>
+                            <constraint firstItem="aAb-zQ-hQh" firstAttribute="centerX" secondItem="Foe-at-fjO" secondAttribute="centerX" id="PTs-h2-GyY"/>
+                            <constraint firstItem="JwX-EW-y1g" firstAttribute="leading" secondItem="S3T-Qs-ne6" secondAttribute="leading" constant="80" id="PTx-Q5-OAs"/>
+                            <constraint firstItem="m7V-HR-Ud3" firstAttribute="centerX" secondItem="Pkc-QI-FDh" secondAttribute="centerX" id="Qhq-Nt-7rw"/>
+                            <constraint firstItem="Foe-at-fjO" firstAttribute="leading" secondItem="m7V-HR-Ud3" secondAttribute="trailing" constant="70" id="RVR-7z-F44"/>
+                            <constraint firstItem="m7V-HR-Ud3" firstAttribute="leading" secondItem="S3T-Qs-ne6" secondAttribute="leading" constant="51" id="TZL-Ge-zfY"/>
+                            <constraint firstItem="S3T-Qs-ne6" firstAttribute="trailing" secondItem="aAb-zQ-hQh" secondAttribute="trailing" constant="84" id="UiM-jF-Yjv"/>
+                            <constraint firstItem="B8g-3m-DuL" firstAttribute="leading" secondItem="m7V-HR-Ud3" secondAttribute="trailing" constant="86" id="WFs-Kj-tbc"/>
+                            <constraint firstItem="tf9-Bd-80K" firstAttribute="top" secondItem="QCV-r2-QHk" secondAttribute="bottom" id="Y0D-fY-P5m"/>
+                            <constraint firstItem="Pkc-QI-FDh" firstAttribute="centerX" secondItem="tf9-Bd-80K" secondAttribute="centerX" id="YS2-1Y-zlE"/>
+                            <constraint firstItem="vxb-kG-582" firstAttribute="top" secondItem="B8g-3m-DuL" secondAttribute="bottom" constant="20" id="Ytq-4E-unB"/>
+                            <constraint firstItem="JwX-EW-y1g" firstAttribute="centerX" secondItem="m7V-HR-Ud3" secondAttribute="centerX" id="ZEn-FV-mDb"/>
+                            <constraint firstItem="v1i-4p-S7l" firstAttribute="top" secondItem="Pkc-QI-FDh" secondAttribute="bottom" constant="87" id="bwg-pd-mPt"/>
+                            <constraint firstItem="Nfs-vO-6fb" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="170" id="cyw-9C-vGa"/>
+                            <constraint firstItem="tf9-Bd-80K" firstAttribute="leading" secondItem="S3T-Qs-ne6" secondAttribute="leading" constant="73" id="dWz-pj-2Ie"/>
+                            <constraint firstItem="v1i-4p-S7l" firstAttribute="top" secondItem="tf9-Bd-80K" secondAttribute="bottom" constant="63" id="e1x-6l-7xD"/>
+                            <constraint firstItem="m7V-HR-Ud3" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="192" id="fFX-jf-quq"/>
+                            <constraint firstItem="Nfs-vO-6fb" firstAttribute="leading" secondItem="m7V-HR-Ud3" secondAttribute="trailing" constant="92" id="gkZ-MA-Wul"/>
+                            <constraint firstItem="B8g-3m-DuL" firstAttribute="centerX" secondItem="vAW-Vb-EuB" secondAttribute="centerX" id="gnJ-WJ-RTY"/>
+                            <constraint firstItem="FJJ-7j-ggl" firstAttribute="trailing" secondItem="v1i-4p-S7l" secondAttribute="trailing" id="hM0-vl-RMH"/>
+                            <constraint firstItem="Pkc-QI-FDh" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="216" id="jIM-Tf-K4f"/>
+                            <constraint firstItem="W2b-Pw-6lz" firstAttribute="bottom" secondItem="S3T-Qs-ne6" secondAttribute="bottom" constant="-13" id="jVS-cP-3xE"/>
+                            <constraint firstItem="Foe-at-fjO" firstAttribute="centerX" secondItem="vxb-kG-582" secondAttribute="centerX" id="kEq-FM-PB7"/>
+                            <constraint firstItem="QCV-r2-QHk" firstAttribute="centerX" secondItem="m7V-HR-Ud3" secondAttribute="centerX" id="kPa-D1-i8F"/>
+                            <constraint firstItem="im9-al-GSY" firstAttribute="leading" secondItem="KP0-kJ-ra1" secondAttribute="leading" id="lKf-Ez-lnE"/>
+                            <constraint firstItem="Nfs-vO-6fb" firstAttribute="centerX" secondItem="YcM-Bi-y1s" secondAttribute="centerX" id="m8Y-ey-z7m"/>
+                            <constraint firstItem="W2b-Pw-6lz" firstAttribute="leading" secondItem="S3T-Qs-ne6" secondAttribute="leading" constant="32" id="njC-1i-WDe"/>
+                            <constraint firstAttribute="trailing" secondItem="im9-al-GSY" secondAttribute="trailing" id="r50-Lk-yZn"/>
+                            <constraint firstItem="W2b-Pw-6lz" firstAttribute="top" secondItem="im9-al-GSY" secondAttribute="bottom" constant="-3" id="tUE-Qc-BIX"/>
+                            <constraint firstItem="B8g-3m-DuL" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="195" id="tfm-aF-cRk"/>
+                            <constraint firstItem="S3T-Qs-ne6" firstAttribute="trailing" secondItem="Foe-at-fjO" secondAttribute="trailing" constant="28" id="twE-Vl-UCo"/>
+                            <constraint firstItem="FJJ-7j-ggl" firstAttribute="leading" secondItem="S3T-Qs-ne6" secondAttribute="leading" constant="70" id="xjZ-u0-muB"/>
+                            <constraint firstItem="YcM-Bi-y1s" firstAttribute="top" secondItem="S3T-Qs-ne6" secondAttribute="top" constant="172" id="z5A-NX-tbn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S3T-Qs-ne6"/>
+                    </view>
+                    <connections>
+                        <outlet property="abs" destination="aAb-zQ-hQh" id="Fig-4U-zwc"/>
+                        <outlet property="biceps" destination="B8g-3m-DuL" id="7mj-zj-Uev"/>
+                        <outlet property="calves" destination="v1i-4p-S7l" id="PSo-ir-t44"/>
+                        <outlet property="chest" destination="YcM-Bi-y1s" id="d9q-of-QXY"/>
+                        <outlet property="forearms" destination="vAW-Vb-EuB" id="Wsi-Xo-be7"/>
+                        <outlet property="glutes" destination="tf9-Bd-80K" id="8kA-uN-W1r"/>
+                        <outlet property="hamstrings" destination="FJJ-7j-ggl" id="fMj-0G-GMY"/>
+                        <outlet property="lats" destination="QCV-r2-QHk" id="uB7-kG-JJl"/>
+                        <outlet property="lowerback" destination="Pkc-QI-FDh" id="uv8-4U-dkb"/>
+                        <outlet property="muscleCollectionView" destination="W2b-Pw-6lz" id="cpL-yc-hNe"/>
+                        <outlet property="obliques" destination="vAW-Vb-EuB" id="pUo-SZ-PTt"/>
+                        <outlet property="quads" destination="vxb-kG-582" id="aOo-gm-meX"/>
+                        <outlet property="shoulders" destination="Nfs-vO-6fb" id="SAq-ib-2NT"/>
+                        <outlet property="traps" destination="JwX-EW-y1g" id="bhe-bn-XXf"/>
+                        <outlet property="triceps" destination="m7V-HR-Ud3" id="SQK-HW-1xU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hq-Kv-Ag1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="119.86607142857142"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Abs" width="104" height="240"/>
+        <image name="Biceps" width="337" height="135"/>
+        <image name="Calves" width="226" height="147"/>
+        <image name="Chest" width="192" height="96"/>
+        <image name="Forearms" width="429" height="169"/>
+        <image name="Glutes" width="205" height="160"/>
+        <image name="Hamstrings" width="225" height="304"/>
+        <image name="Human Body" width="1200" height="1192"/>
+        <image name="Lats" width="200" height="187"/>
+        <image name="Lowerback" width="115" height="178"/>
+        <image name="Obliques" width="184" height="238"/>
+        <image name="Quads" width="236" height="335"/>
+        <image name="Shoulders" width="301" height="88"/>
+        <image name="Traps" width="172" height="161"/>
+        <image name="Triceps" width="339" height="114"/>
+    </resources>
 </document>

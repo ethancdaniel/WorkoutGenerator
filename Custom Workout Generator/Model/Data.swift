@@ -28,6 +28,11 @@ class Data {
     let workouts = [Workout(name: "Push", bodyParts: [Parts.chest, Parts.triceps, Parts.shoulders]),
                     Workout(name: "Pull", bodyParts: [Parts.lats, Parts.lowerBack, Parts.biceps]),
                     Workout(name: "Legs", bodyParts: [Parts.quadriceps, Parts.glutes, Parts.hamstrings, Parts.calves])]
+    
+    let parts = ["Abs", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lowerback", "Obliques", "Quads", "Shoulders", "Traps", "Triceps", ]
+    
+    let selected = ["SelectedAbs", "SelectedBiceps", "SelectedCalves", "SelectedChest", "SelectedForearms", "SelectedGlutes", "SelectedHamstrings", "SelectedLats", "SelectedLowerback", "SelectedObliques", "SelectedQuads", "SelectedShoulders", "SelectedTraps", "SelectedTriceps"]
+    
 }
 
 enum Parts : String {
@@ -46,3 +51,4 @@ enum Parts : String {
     case hamstrings
     case calves
 }
+
