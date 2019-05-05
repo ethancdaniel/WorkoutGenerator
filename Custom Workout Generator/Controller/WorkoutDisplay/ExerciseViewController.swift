@@ -12,7 +12,7 @@ import UIKit
 class ExerciseViewController: UIViewController {
     var exercise: Exercise?
     var volume: String?
-    var image: UIImage?
+    //var image: UIImage?
     
     @IBOutlet weak var exerciseName: UILabel!
     @IBOutlet weak var setsAndReps: UILabel!
@@ -22,6 +22,6 @@ class ExerciseViewController: UIViewController {
         super.viewDidLoad()
         exerciseName.text = exercise!.name
         setsAndReps.text = volume!
-        exerciseImage.image = image!
+        exerciseImage.image = UIImage(named: exercise!.imageName)
     }
 }
