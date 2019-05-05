@@ -11,6 +11,7 @@ import UIKit
 class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var data = Data()
     var selectBool = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    var generatedWorkout: [Exercise] = []
     
     @IBOutlet weak var muscleCollectionView: UICollectionView!
     @IBOutlet weak var shoulders: UIButton!
@@ -51,21 +52,76 @@ class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 75, height: 75)
+        return CGSize(width: 100, height: 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if selectBool[indexPath.item] {
             selectBool[indexPath.item] = false
-            if let button = self.view.viewWithTag(indexPath.item) as? UIButton {
+            if let button = self.view.viewWithTag(indexPath.item + 1) as? UIButton {
                 button.setImage(UIImage(named: data.parts[indexPath.item]), for: .normal)
             }
         } else {
             selectBool[indexPath.item] = true
-            if let button = self.view.viewWithTag(indexPath.item) as? UIButton {
+            if let button = self.view.viewWithTag(indexPath.item + 1) as? UIButton {
                 button.setImage(UIImage(named: data.selected[indexPath.item]), for: .normal)
             }
         }
+    }
+    
+    func generateWorkout(listOfParts: [Parts]) {
+        let numParts = listOfParts.count
+        let exPerPart = Int(ceil(Double(6 / numParts)))
+        var compounds = 0
+        var needCompound = true
+        var chosenExercises: [Int] = []
+        for part in listOfParts {
+            if compounds < 2 {
+                needCompound = true
+            } else {
+                needCompound = false
+            }
+            var count = 0
+            var randomInt: Int
+            while count < exPerPart {
+                randomInt = Int.random(in: 0..<data.exercises.count)
+                let exercise = data.exercises[randomInt]
+                if needCompound == true {
+                    if exercise.compound && exercise.parts.contains(part) && !chosenExercises.contains(randomInt) {
+                        generatedWorkout.append(exercise)
+                        chosenExercises.append(randomInt)
+                        compounds += 1
+                        count += 1
+                    }
+                } else {
+                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) && !exercise.compound {
+                        generatedWorkout.append(exercise)
+                        chosenExercises.append(randomInt)
+                        count += 1
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func generatePressed(_ sender: Any) {
+        var parts = [Parts]()
+        var index = 0
+        for b in selectBool {
+            if b {
+                parts.append(data.classPart[index])
+            }
+            index += 1
+        }
+        if parts.count == 0 {
+            let alert = UIAlertController(title: "No Muscle Groups Selected", message: "Must select at least one muscle group", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            generateWorkout(listOfParts: parts)
+        }
+        
     }
     
     

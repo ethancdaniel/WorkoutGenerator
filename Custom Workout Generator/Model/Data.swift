@@ -80,6 +80,8 @@ class Data {
     
     let selected = ["SelectedAbs", "SelectedBiceps", "SelectedCalves", "SelectedChest", "SelectedForearms", "SelectedGlutes", "SelectedHamstrings", "SelectedLats", "SelectedLowerback", "SelectedObliques", "SelectedQuads", "SelectedShoulders", "SelectedTraps", "SelectedTriceps"]
     
+    let classPart = [Parts.abdominals, Parts.biceps, Parts.calves, Parts.chest, Parts.forearms, Parts.glutes, Parts.hamstrings, Parts.lats, Parts.lowerBack, Parts.obliques, Parts.quadriceps, Parts.shoulders, Parts.trapezius, Parts.triceps]
+    
 }
 
 enum Parts : String {
