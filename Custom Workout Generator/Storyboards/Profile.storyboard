@@ -18,26 +18,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is the profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-It-9aN">
-                                <rect key="frame" x="144" y="437.5" width="126.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-RZ-6Pb">
+                                <rect key="frame" x="99" y="95" width="217" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPD-HF-v9V" userLabel="Second View">
+                                <rect key="frame" x="0.0" y="419" width="414" height="448"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gn2-o8-bBY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.8162571756" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="gn2-o8-bBY" firstAttribute="height" secondItem="jPD-HF-v9V" secondAttribute="height" id="4pw-LN-j2q"/>
+                                    <constraint firstItem="gn2-o8-bBY" firstAttribute="width" secondItem="jPD-HF-v9V" secondAttribute="width" id="APt-vp-42x"/>
+                                    <constraint firstItem="gn2-o8-bBY" firstAttribute="centerY" secondItem="jPD-HF-v9V" secondAttribute="centerY" id="KFY-cM-yZD"/>
+                                    <constraint firstItem="gn2-o8-bBY" firstAttribute="centerX" secondItem="jPD-HF-v9V" secondAttribute="centerX" id="hqv-1K-HQe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3he-g6-PXq" userLabel="First view">
+                                <rect key="frame" x="0.0" y="419" width="414" height="448"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFV-L4-BHJ">
+                                        <rect key="frame" x="87" y="160" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="efd-AY-QRl">
+                                <rect key="frame" x="69" y="384" width="373" height="44.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwP-pG-zDv">
+                                        <rect key="frame" x="0.0" y="7" width="132" height="30"/>
+                                        <state key="normal" title="Personal Stats"/>
+                                        <connections>
+                                            <action selector="statsPressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="HNi-3g-UB0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFk-Bg-dDS">
+                                        <rect key="frame" x="261" y="7" width="112" height="30"/>
+                                        <state key="normal" title="Saved Workouts"/>
+                                        <connections>
+                                            <action selector="workoutsPressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="kDc-jY-o8r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kVa-It-9aN" firstAttribute="centerY" secondItem="8Si-mZ-IH5" secondAttribute="centerY" id="QMD-yh-zqD"/>
-                            <constraint firstItem="kVa-It-9aN" firstAttribute="centerX" secondItem="8Si-mZ-IH5" secondAttribute="centerX" id="ook-hz-0gd"/>
+                            <constraint firstItem="jPD-HF-v9V" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="1.5" id="E8Q-i9-qPR"/>
+                            <constraint firstItem="3he-g6-PXq" firstAttribute="centerX" secondItem="MV2-PP-5QF" secondAttribute="centerX" id="EJ8-5a-UMG"/>
+                            <constraint firstItem="efd-AY-QRl" firstAttribute="height" secondItem="8Si-mZ-IH5" secondAttribute="height" multiplier="0.05" id="I62-0Y-0LM"/>
+                            <constraint firstItem="EbY-RZ-6Pb" firstAttribute="centerX" secondItem="MV2-PP-5QF" secondAttribute="centerX" id="Ipp-EK-J7h"/>
+                            <constraint firstItem="efd-AY-QRl" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="0.9" id="UCK-k1-6I0"/>
+                            <constraint firstItem="3he-g6-PXq" firstAttribute="width" secondItem="8Si-mZ-IH5" secondAttribute="width" id="Uhh-Cr-4A0"/>
+                            <constraint firstItem="efd-AY-QRl" firstAttribute="centerX" secondItem="MV2-PP-5QF" secondAttribute="centerX" id="b0r-gc-EHf"/>
+                            <constraint firstItem="3he-g6-PXq" firstAttribute="height" secondItem="8Si-mZ-IH5" secondAttribute="height" multiplier="0.5" id="dNJ-fQ-Dba"/>
+                            <constraint firstItem="3he-g6-PXq" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="1.5" id="fvB-vU-gfo"/>
+                            <constraint firstItem="jPD-HF-v9V" firstAttribute="centerX" secondItem="MV2-PP-5QF" secondAttribute="centerX" id="kS4-ZX-mCO"/>
+                            <constraint firstItem="jPD-HF-v9V" firstAttribute="width" secondItem="8Si-mZ-IH5" secondAttribute="width" id="rgO-ja-OMX"/>
+                            <constraint firstItem="EbY-RZ-6Pb" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="0.2" id="vPg-Tz-RYj"/>
+                            <constraint firstItem="efd-AY-QRl" firstAttribute="width" secondItem="8Si-mZ-IH5" secondAttribute="width" multiplier="0.9" id="xC5-0K-fXK"/>
+                            <constraint firstItem="jPD-HF-v9V" firstAttribute="height" secondItem="8Si-mZ-IH5" secondAttribute="height" multiplier="0.5" id="xHN-Dl-LgA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MV2-PP-5QF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="daS-o6-jA4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="personalStats" destination="3he-g6-PXq" id="Qhq-dL-Los"/>
+                        <outlet property="savedWorkouts" destination="jPD-HF-v9V" id="0Lo-MO-aki"/>
+                        <outlet property="statsButton" destination="dwP-pG-zDv" id="Rh0-iy-qA8"/>
+                        <outlet property="welcome" destination="EbY-RZ-6Pb" id="yso-l0-Ktd"/>
+                        <outlet property="workoutsButton" destination="OFk-Bg-dDS" id="1Fc-d7-Iyh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwl-pP-maH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="96"/>
+            <point key="canvasLocation" x="31.884057971014496" y="95.758928571428569"/>
         </scene>
     </scenes>
 </document>
