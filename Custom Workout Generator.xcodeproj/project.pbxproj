@@ -19,9 +19,9 @@
 		AAB15D932269533300B2400F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D922269533300B2400F /* Exercise.swift */; };
 		AAB15D95226956D900B2400F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D94226956D900B2400F /* Data.swift */; };
 		AAB15D9822695E7C00B2400F /* WorkoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D9722695E7C00B2400F /* WorkoutCollectionViewCell.swift */; };
+		AAC3A8B1227E47BF009F95EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC3A8B0227E47BF009F95EE /* GoogleService-Info.plist */; };
 		DD59BF0D227E50DE00F94D92 /* WorkoutSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD59BF0C227E50DE00F94D92 /* WorkoutSelectorViewController.swift */; };
 		DD59BF10227E65E200F94D92 /* WorkoutTableViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD59BF0F227E65E200F94D92 /* WorkoutTableViewControllerCell.swift */; };
-		AAC3A8B1227E47BF009F95EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC3A8B0227E47BF009F95EE /* GoogleService-Info.plist */; };
 		E43E4C6AE9A9ADED3A267AA7 /* Pods_Custom_Workout_Generator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29067B3C8F41C829D6D90C71 /* Pods_Custom_Workout_Generator.framework */; };
 /* End PBXBuildFile section */
 
@@ -453,7 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9T39XL8AQ;
+				DEVELOPMENT_TEAM = NRJUM8SCBS;
 				INFOPLIST_FILE = "Custom Workout Generator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -472,7 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9T39XL8AQ;
+				DEVELOPMENT_TEAM = NRJUM8SCBS;
 				INFOPLIST_FILE = "Custom Workout Generator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

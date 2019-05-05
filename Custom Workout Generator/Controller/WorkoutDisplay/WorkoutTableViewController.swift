@@ -11,7 +11,7 @@ import UIKit
 class WorkoutTableViewController: UITableViewController {
     
     let data = Data()
-    var workoutIndex: Int?
+    //var workoutIndex: Int?
     var currentWorkout: [Exercise] = []
     
     @IBOutlet var exercisesTableView: UITableView!
@@ -25,7 +25,7 @@ class WorkoutTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.workouts[workoutIndex!].exercises.count
+        return currentWorkout.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -11,7 +11,7 @@ import UIKit
 class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let data = Data()
-    var selectedCell: Int?
+    //var selectedCell: Int?
     var generatedWorkout: [Exercise] = []
     @IBOutlet weak var workoutOptions: UICollectionView!
     
@@ -35,49 +35,57 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCell = indexPath.item
-        
-        performSegue(withIdentifier: "CreatedWorkout", sender: self)
+        //selectedCell = indexPath.item
+        generateWorkout(workoutIndex: indexPath.item)
+        print(generatedWorkout)
+        //performSegue(withIdentifier: "CreatedWorkout", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UICollectionViewCell, let dest = segue.destination as? WorkoutTableViewController {
-            dest.workoutIndex = selectedCell
-            dest.currentWorkout = generatedWorkout
+            //dest.workoutIndex = selectedCell
+            //dest.currentWorkout = generatedWorkout
         }
     }
     
     func generateWorkout(workoutIndex: Int) {
-        let parts = data.workouts[selectedCell!].bodyParts
+        let parts = data.workouts[workoutIndex].bodyParts
         let numParts = parts.count
         let exPerPart = (6 / numParts)
         var compounds = 0
         var needCompound = true
-        for n in 0...numParts {
+        var chosenExercises: [Int] = []
+        for part in parts {
             if compounds < 2 {
                 needCompound = true
             } else {
                 needCompound = false
             }
-            let targetPart = parts[n]
             var count = 0
-            var lastExercise = ""
+            var randomInt: Int
             while count < exPerPart {
-                for exercise in data.exercises {
-                    if needCompound == true {
-                        if exercise.compound && exercise.parts.contains(targetPart) {
-                            generatedWorkout.append(exercise)
-                        }
-                    } else if needCompound == false {
-                        if exercise.parts.contains(targetPart) {
-                            generatedWorkout.append(exercise)
-                        }
+                randomInt = Int.random(in: 0..<data.exercises.count)
+                let exercise = data.exercises[randomInt]
+                if needCompound == true {
+                    if exercise.compound && exercise.parts.contains(part) && !chosenExercises.contains(randomInt) {
+                        generatedWorkout.append(exercise)
+                        chosenExercises.append(randomInt)
+                        compounds += 1
+                        count += 1
+                    }
+                } else {
+                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) {
+                        generatedWorkout.append(exercise)
+                        chosenExercises.append(randomInt)
+                        count += 1
                     }
                 }
-                count += 1
             }
         }
     }
+    // ["Dips", "Close-Grip Bench Press", "Skullcrushers", "Rope Tricep Extension", "Barbell Shoulder Press", "Incline Bench Press"]
+    // ["Bench Press", "Dips", "Incline Bench Press", "Overhead Tricep Extension", "Rear Lateral Raise", "Dumbbell Shoulder Press"]
+    // ["Close-Grip Bench Press", "Dips", "Bench Press", "Pushups", "Barbell Shoulder Press", "Dumbbell Lateral Raise"]
     /*
     // MARK: - Navigation
 
