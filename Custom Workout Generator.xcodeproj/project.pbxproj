@@ -37,7 +37,7 @@
 		29067B3C8F41C829D6D90C71 /* Pods_Custom_Workout_Generator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Custom_Workout_Generator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		362E73315B1B02626EC3C8E7 /* Pods-Custom Workout Generator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom Workout Generator.debug.xcconfig"; path = "Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator.debug.xcconfig"; sourceTree = "<group>"; };
 		8E0D8013227E7924008F0DCB /* MuscleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuscleCollectionViewCell.swift; path = "Custom Workout Generator/View/MuscleCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
-		8E7A396D227E5DDF00367B8F /* MuscleSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuscleSelectionViewController.swift; path = "Custom Workout Generator/Controller/MuscleSelectionViewController.swift"; sourceTree = SOURCE_ROOT; };
+		8E7A396D227E5DDF00367B8F /* MuscleSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MuscleSelectionViewController.swift; path = "Custom Workout Generator/Controller/MuscleSelection/MuscleSelectionViewController.swift"; sourceTree = SOURCE_ROOT; };
 		8EA04858227EA4C7002AE1BA /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
 		8EA0485A227EA4F8002AE1BA /* WorkoutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA122E0B225D5C3F00757B6B /* Custom Workout Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom Workout Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8EEAB215227F91E600382397 /* MuscleSelection */ = {
+			isa = PBXGroup;
+			children = (
+				8E7A396D227E5DDF00367B8F /* MuscleSelectionViewController.swift */,
+			);
+			path = MuscleSelection;
+			sourceTree = "<group>";
+		};
 		AA122E02225D5C3F00757B6B = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +135,7 @@
 			children = (
 				AABE219B227ECDBC0038CC16 /* Saved Workouts */,
 				AABE2198227ECD2D0038CC16 /* Profile */,
-				8E7A396D227E5DDF00367B8F /* MuscleSelectionViewController.swift */,
+				8EEAB215227F91E600382397 /* MuscleSelection */,
 				DD59BF0B227E4C1D00F94D92 /* WorkoutSelection */,
 				DD59BF0E227E654600F94D92 /* WorkoutDisplay */,
 				AA726977227E493F00159A72 /* SignIn.swift */,
