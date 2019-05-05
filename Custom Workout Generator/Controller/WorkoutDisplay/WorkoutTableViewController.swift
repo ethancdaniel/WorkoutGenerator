@@ -53,6 +53,11 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? ExerciseViewController {
             dest.exercise = exerciseToDisplay!
+            if exerciseToDisplay!.compound {
+                dest.volume = "4 x 6 reps"
+            } else {
+                dest.volume = "3 x 8-12 reps"
+            }
         }
     }
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {

@@ -12,10 +12,12 @@ class Exercise {
     let name: String
     let parts: [Parts]
     let compound: Bool
+    let imageName: String
     
-    init(name: String, parts: [Parts], isCompound: Bool) {
+    init(name: String, parts: [Parts], isCompound: Bool, imageName: String) {
         self.name = name
         self.parts = parts
         self.compound = isCompound
+        self.imageName = imageName
     }
 }
