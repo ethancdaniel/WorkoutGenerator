@@ -17,7 +17,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynt-ef-rIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="-587"/>
+            <point key="canvasLocation" x="465" y="-289"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FmF-0N-2rc">
@@ -27,17 +27,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nF0-lp-iZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-413"/>
-        </scene>
-        <!--SavedWorkouts-->
-        <scene sceneID="3Tz-zG-9ar">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SavedWorkouts" id="J80-fZ-XL7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1MH-Qc-5GV"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nNq-jy-qFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="721" y="-274"/>
+            <point key="canvasLocation" x="467" y="-334"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VpB-fB-uIZ">
@@ -52,7 +42,6 @@
                     <connections>
                         <segue destination="L39-5p-OYE" kind="relationship" relationship="viewControllers" id="i2e-oS-FxE"/>
                         <segue destination="xfg-va-453" kind="relationship" relationship="viewControllers" id="Opr-ok-ZuF"/>
-                        <segue destination="J80-fZ-XL7" kind="relationship" relationship="viewControllers" id="l3U-yn-YYI"/>
                     </connections>
                 </tabBarController>
             </objects>
