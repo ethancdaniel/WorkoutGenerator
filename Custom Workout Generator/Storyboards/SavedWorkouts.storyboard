@@ -41,9 +41,6 @@
                                                 <constraint firstItem="L9d-rF-bEC" firstAttribute="leading" secondItem="BHU-RX-h9A" secondAttribute="leadingMargin" id="5r1-FA-3XB"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="workoutName" destination="L9d-rF-bEC" id="7tW-JX-mLc"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
