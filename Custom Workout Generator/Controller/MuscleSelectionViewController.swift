@@ -10,7 +10,7 @@ import UIKit
 
 class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var data = Data()
-    
+    var selectBool = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     
     @IBOutlet weak var muscleCollectionView: UICollectionView!
     @IBOutlet weak var shoulders: UIButton!
@@ -43,6 +43,8 @@ class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "muscleCell", for: indexPath) as? MuscleCollectionViewCell {
             cell.muscleLabel.text = data.parts[indexPath.item]
+            cell.layer.cornerRadius = 10
+            cell.layer.masksToBounds = true
             return cell
         }
         return UICollectionViewCell()
@@ -53,8 +55,19 @@ class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if selectBool[indexPath.item] {
+            selectBool[indexPath.item] = false
+            if let button = self.view.viewWithTag(indexPath.item) as? UIButton {
+                button.setImage(UIImage(named: data.parts[indexPath.item]), for: .normal)
+            }
+        } else {
+            selectBool[indexPath.item] = true
+            if let button = self.view.viewWithTag(indexPath.item) as? UIButton {
+                button.setImage(UIImage(named: data.selected[indexPath.item]), for: .normal)
+            }
+        }
     }
+    
     
     
     /*
