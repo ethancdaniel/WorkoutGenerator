@@ -12,6 +12,7 @@ class WorkoutTableViewController: UITableViewController {
     
     let data = Data()
     var workoutIndex: Int?
+    var currentWorkout: [Exercise] = []
     
     @IBOutlet var exercisesTableView: UITableView!
     
@@ -19,6 +20,8 @@ class WorkoutTableViewController: UITableViewController {
         super.viewDidLoad()
         exercisesTableView.dataSource = self
         exercisesTableView.delegate = self
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
