@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let userID = Auth.auth().currentUser?.uid {
             print(userID)
-            let rootVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as UIViewController
+            let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as UIViewController
             rootVC.view.frame = UIScreen.main.bounds
             UIView.transition(with: self.window!, duration: 0.25, options: .transitionCrossDissolve, animations: {
                 self.window?.rootViewController = rootVC

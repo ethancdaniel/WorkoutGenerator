@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ka7-5c-5s0">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Saved Workouts View Controller-->
+        <scene sceneID="wMp-qB-I9a">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chf-lO-eHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="BKU-1n-oe6" customClass="SavedWorkoutsViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W47-Tg-1xJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GsZ-S3-bTG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GsZ-S3-bTG" firstAttribute="centerX" secondItem="W47-Tg-1xJ" secondAttribute="centerX" id="92K-6i-oTO"/>
+                            <constraint firstItem="GsZ-S3-bTG" firstAttribute="width" secondItem="W47-Tg-1xJ" secondAttribute="width" id="Pqe-7e-b3R"/>
+                            <constraint firstItem="GsZ-S3-bTG" firstAttribute="height" secondItem="W47-Tg-1xJ" secondAttribute="height" id="ode-r7-E9a"/>
+                            <constraint firstItem="GsZ-S3-bTG" firstAttribute="centerY" secondItem="W47-Tg-1xJ" secondAttribute="centerY" id="xok-iD-Qp3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tFn-uv-Wia"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="X9b-dd-UyJ"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="399" y="110"/>
+        </scene>
+        <!--Saved Workouts-->
+        <scene sceneID="VIo-9f-Ec1">
+            <objects>
+                <navigationController id="Ka7-5c-5s0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved Workouts" id="ULn-EC-9Ta"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HEZ-yJ-llj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BKU-1n-oe6" kind="relationship" relationship="rootViewController" id="D7L-j2-R6X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ray-vg-yZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-525" y="110"/>
+        </scene>
+    </scenes>
+</document>

@@ -22,6 +22,11 @@
 		AAB15D932269533300B2400F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D922269533300B2400F /* Exercise.swift */; };
 		AAB15D95226956D900B2400F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB15D94226956D900B2400F /* Data.swift */; };
 		AABE218F227EC0500038CC16 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE218E227EC0500038CC16 /* ExerciseViewController.swift */; };
+		AABE2191227ECC430038CC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABE2190227ECC430038CC16 /* Main.storyboard */; };
+		AABE2195227ECD0C0038CC16 /* SavedWorkouts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABE2194227ECD0C0038CC16 /* SavedWorkouts.storyboard */; };
+		AABE2197227ECD170038CC16 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AABE2196227ECD170038CC16 /* Profile.storyboard */; };
+		AABE219A227ECD400038CC16 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE2199227ECD400038CC16 /* ProfileViewController.swift */; };
+		AABE219D227ECDD50038CC16 /* SavedWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABE219C227ECDD50038CC16 /* SavedWorkoutsViewController.swift */; };
 		AAC3A8B1227E47BF009F95EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC3A8B0227E47BF009F95EE /* GoogleService-Info.plist */; };
 		DD59BF0D227E50DE00F94D92 /* WorkoutSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD59BF0C227E50DE00F94D92 /* WorkoutSelectorViewController.swift */; };
 		DD59BF10227E65E200F94D92 /* WorkoutTableViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD59BF0F227E65E200F94D92 /* WorkoutTableViewControllerCell.swift */; };
@@ -48,6 +53,11 @@
 		AAB15D922269533300B2400F /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		AAB15D94226956D900B2400F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		AABE218E227EC0500038CC16 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		AABE2190227ECC430038CC16 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AABE2194227ECD0C0038CC16 /* SavedWorkouts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedWorkouts.storyboard; sourceTree = "<group>"; };
+		AABE2196227ECD170038CC16 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		AABE2199227ECD400038CC16 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AABE219C227ECDD50038CC16 /* SavedWorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWorkoutsViewController.swift; sourceTree = "<group>"; };
 		AAC3A8B0227E47BF009F95EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C332C164D310970BAAFD9015 /* Pods-Custom Workout Generator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom Workout Generator.release.xcconfig"; path = "Target Support Files/Pods-Custom Workout Generator/Pods-Custom Workout Generator.release.xcconfig"; sourceTree = "<group>"; };
 		DD59BF0C227E50DE00F94D92 /* WorkoutSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSelectorViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +115,9 @@
 			children = (
 				AA122E12225D5C3F00757B6B /* Home.storyboard */,
 				AA122E21225D5F1700757B6B /* Authentication.storyboard */,
+				AABE2190227ECC430038CC16 /* Main.storyboard */,
+				AABE2194227ECD0C0038CC16 /* SavedWorkouts.storyboard */,
+				AABE2196227ECD170038CC16 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -112,6 +125,8 @@
 		AA135E7422698974002F5722 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AABE219B227ECDBC0038CC16 /* Saved Workouts */,
+				AABE2198227ECD2D0038CC16 /* Profile */,
 				8E7A396D227E5DDF00367B8F /* MuscleSelectionViewController.swift */,
 				DD59BF0B227E4C1D00F94D92 /* WorkoutSelection */,
 				DD59BF0E227E654600F94D92 /* WorkoutDisplay */,
@@ -137,6 +152,22 @@
 				8E0D8013227E7924008F0DCB /* MuscleCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AABE2198227ECD2D0038CC16 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AABE2199227ECD400038CC16 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AABE219B227ECDBC0038CC16 /* Saved Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				AABE219C227ECDD50038CC16 /* SavedWorkoutsViewController.swift */,
+			);
+			path = "Saved Workouts";
 			sourceTree = "<group>";
 		};
 		D5250EDC5AA4DD39B8739C82 /* Pods */ = {
@@ -237,7 +268,10 @@
 			files = (
 				AA122E22225D5F1700757B6B /* Authentication.storyboard in Resources */,
 				AA122E19225D5C4000757B6B /* LaunchScreen.storyboard in Resources */,
+				AABE2197227ECD170038CC16 /* Profile.storyboard in Resources */,
 				AAC3A8B1227E47BF009F95EE /* GoogleService-Info.plist in Resources */,
+				AABE2191227ECC430038CC16 /* Main.storyboard in Resources */,
+				AABE2195227ECD0C0038CC16 /* SavedWorkouts.storyboard in Resources */,
 				AA122E16225D5C4000757B6B /* Assets.xcassets in Resources */,
 				AA122E14225D5C3F00757B6B /* Home.storyboard in Resources */,
 			);
@@ -309,10 +343,12 @@
 				AAB15D95226956D900B2400F /* Data.swift in Sources */,
 				DD59BF10227E65E200F94D92 /* WorkoutTableViewControllerCell.swift in Sources */,
 				8E0D8014227E7924008F0DCB /* MuscleCollectionViewCell.swift in Sources */,
+				AABE219A227ECD400038CC16 /* ProfileViewController.swift in Sources */,
 				AAB15D932269533300B2400F /* Exercise.swift in Sources */,
 				8E7A396E227E5DDF00367B8F /* MuscleSelectionViewController.swift in Sources */,
 				DD59BF0D227E50DE00F94D92 /* WorkoutSelectorViewController.swift in Sources */,
 				AA122E0F225D5C3F00757B6B /* AppDelegate.swift in Sources */,
+				AABE219D227ECDD50038CC16 /* SavedWorkoutsViewController.swift in Sources */,
 				AAB15D912269529100B2400F /* Workout.swift in Sources */,
 				8EA0485B227EA4F8002AE1BA /* WorkoutCollectionViewCell.swift in Sources */,
 				AA72697A227E494A00159A72 /* SignUp.swift in Sources */,
