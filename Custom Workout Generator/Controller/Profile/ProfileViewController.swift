@@ -60,9 +60,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         let dict = exercise.value as? [String:AnyObject] ?? [:]
                         let isCompound = dict["isCompound"]
                         if let _ = self.savedWorkoutsDict[child.key] {
-                            self.savedWorkoutsDict[child.key]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool))
+                            self.savedWorkoutsDict[child.key]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: "benchPress"))
                         } else {
-                            self.savedWorkoutsDict[child.key] = [Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool)]
+                            self.savedWorkoutsDict[child.key] = [Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: "benchPress")]
                         }
                     }
                 }
