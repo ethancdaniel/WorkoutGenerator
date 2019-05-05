@@ -13,26 +13,26 @@
         <scene sceneID="xKX-Im-qMW">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="xfg-va-453" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="nEy-Bx-fdN"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="nEy-Bx-fdN"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynt-ef-rIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="698" y="-587"/>
         </scene>
-        <!--SavedWorkouts-->
+        <!--Profile-->
         <scene sceneID="FmF-0N-2rc">
             <objects>
-                <viewControllerPlaceholder storyboardName="SavedWorkouts" id="L39-5p-OYE" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="L39-5p-OYE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ygj-Ir-Rhw"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nF0-lp-iZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="738" y="-413"/>
         </scene>
-        <!--Profile-->
+        <!--SavedWorkouts-->
         <scene sceneID="3Tz-zG-9ar">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="J80-fZ-XL7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SavedWorkouts" id="J80-fZ-XL7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="1MH-Qc-5GV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNq-jy-qFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
