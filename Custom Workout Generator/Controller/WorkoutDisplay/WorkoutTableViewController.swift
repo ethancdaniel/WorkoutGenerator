@@ -8,10 +8,9 @@
 
 import UIKit
 
-class WorkoutTableViewController: UITableViewController {
+class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let data = Data()
-    //var workoutIndex: Int?
     var currentWorkout: [Exercise] = []
     
     @IBOutlet var exercisesTableView: UITableView!
@@ -20,16 +19,25 @@ class WorkoutTableViewController: UITableViewController {
         super.viewDidLoad()
         exercisesTableView.dataSource = self
         exercisesTableView.delegate = self
-        
-        
+        exercisesTableView.rowHeight = 60
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentWorkout.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // TODO
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell") as? WorkoutTableViewControllerCell {
+            let exercise = currentWorkout[indexPath.row]
+            cell.exerciseNameLabel.text = exercise.name
+            if exercise.compound {
+                cell.setsAndRepsLabel.text = "4 x 6 reps"
+            } else {
+                cell.setsAndRepsLabel.text = "3 x 8-12 reps"
+            }
+            return cell
+        }
         return UITableViewCell()
     }
 }
