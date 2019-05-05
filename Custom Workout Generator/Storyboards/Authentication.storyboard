@@ -31,13 +31,13 @@
                                         <rect key="frame" x="0.0" y="310" width="290" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSe-gH-SEy">
                                         <rect key="frame" x="0.0" y="360" width="290" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyO-t6-2ak" userLabel="Sign In Button">
                                         <rect key="frame" x="0.0" y="410" width="290" height="50"/>
@@ -89,9 +89,10 @@
                         <viewLayoutGuide key="safeArea" id="Ujt-ef-ywy"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="Iy6-Rk-3sD" id="xvI-UW-pY2"/>
                         <outlet property="passwordTextField" destination="eSe-gH-SEy" id="XCU-KN-pHT"/>
-                        <outlet property="usernameTextField" destination="Iy6-Rk-3sD" id="69V-3g-p4c"/>
                         <segue destination="D3O-IV-1qL" kind="show" identifier="segueToSignUp" id="gfR-21-hRB"/>
+                        <segue destination="8wl-Z4-eal" kind="show" identifier="signInToHome" id="NSm-Y6-u4B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUs-N4-ewQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,7 +126,7 @@
                                         <rect key="frame" x="0.0" y="46" width="290" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqS-bl-sBr">
                                         <rect key="frame" x="0.0" y="92" width="290" height="30"/>
@@ -149,33 +150,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xq-69-VUs" userLabel="Error Label">
-                                <rect key="frame" x="62" y="380" width="290" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Ze-mn-cmb" firstAttribute="top" secondItem="VPe-IG-Xsb" secondAttribute="top" constant="50" id="0th-ws-2FG"/>
-                            <constraint firstItem="4Xq-69-VUs" firstAttribute="centerX" secondItem="kFM-WI-5Ah" secondAttribute="centerX" id="2fF-xb-a8F"/>
-                            <constraint firstAttribute="trailing" secondItem="4Xq-69-VUs" secondAttribute="trailing" constant="62" id="CBK-Lc-YAF"/>
                             <constraint firstItem="iGk-UJ-F7D" firstAttribute="width" secondItem="kFM-WI-5Ah" secondAttribute="width" multiplier="0.7" id="QIC-be-u9I"/>
-                            <constraint firstItem="4Xq-69-VUs" firstAttribute="leading" secondItem="kFM-WI-5Ah" secondAttribute="leading" constant="62" id="VDF-zv-Z84"/>
                             <constraint firstItem="iGk-UJ-F7D" firstAttribute="top" secondItem="9Ze-mn-cmb" secondAttribute="bottom" constant="39" id="acR-hq-O8f"/>
                             <constraint firstItem="iGk-UJ-F7D" firstAttribute="centerX" secondItem="kFM-WI-5Ah" secondAttribute="centerX" id="hZF-53-iFg"/>
                             <constraint firstItem="9Ze-mn-cmb" firstAttribute="centerX" secondItem="kFM-WI-5Ah" secondAttribute="centerX" id="sFT-2g-12O"/>
-                            <constraint firstItem="4Xq-69-VUs" firstAttribute="top" secondItem="iGk-UJ-F7D" secondAttribute="bottom" constant="30" id="xDn-sf-EW4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VPe-IG-Xsb"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="ye6-cR-Bug" id="EKo-Mt-2IZ"/>
-                        <outlet property="errorLabel" destination="4Xq-69-VUs" id="RxC-dr-t70"/>
                         <outlet property="nameTextField" destination="1iG-Cv-ggK" id="jRP-uu-dEA"/>
                         <outlet property="passwordTextField" destination="iqS-bl-sBr" id="4RC-3R-UOd"/>
-                        <segue destination="8wl-Z4-eal" kind="show" identifier="segueToHome" id="akK-85-lRw"/>
+                        <segue destination="8wl-Z4-eal" kind="show" identifier="signUpToHome" id="akK-85-lRw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9V-qk-FSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,4 +181,7 @@
             <point key="canvasLocation" x="1718" y="-16"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="akK-85-lRw"/>
+    </inferredMetricsTieBreakers>
 </document>

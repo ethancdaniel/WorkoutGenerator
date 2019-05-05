@@ -13,7 +13,6 @@ class SignUp: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
     
     var ref: DatabaseReference!
     
@@ -25,10 +24,15 @@ class SignUp: UIViewController {
         if let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 if let err = error {
-                    self.errorLabel.text = "Error: \(err.localizedDescription)"
+                    let alertController = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
                 } else {
                     self.ref.child("Users").child((authResult?.user.uid)!).setValue(["fullName": name])
-                    self.performSegue(withIdentifier: "segueToHome", sender: self)
+                    self.performSegue(withIdentifier: "signUpToHome", sender: self)
                 }
             }
         }
