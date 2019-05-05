@@ -114,7 +114,13 @@ class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate,
             }
             index += 1
         }
-        generateWorkout(listOfParts: parts)
+        if parts.count == 0 {
+            let alert = UIAlertController(title: "No Muscle Groups Selected", message: "Must select at least one muscle group", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            generateWorkout(listOfParts: parts)
+        }
         
     }
     

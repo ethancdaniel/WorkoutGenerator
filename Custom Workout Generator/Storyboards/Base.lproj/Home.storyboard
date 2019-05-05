@@ -97,7 +97,7 @@
                     <connections>
                         <outlet property="workoutOptions" destination="k2s-po-Mni" id="Qno-MW-Jy7"/>
                         <segue destination="Vjw-Ea-HT1" kind="showDetail" identifier="CreatedWorkout" id="9aj-Gu-KIN"/>
-                        <segue destination="eGE-em-Pkx" kind="show" id="sWY-4Z-KD6"/>
+                        <segue destination="eGE-em-Pkx" kind="show" identifier="createOwn" id="sWY-4Z-KD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFp-Kr-PHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,7 +191,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zc0-XQ-4qC">
-                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <rect key="frame" x="4" y="15" width="160" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -387,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hq-Kv-Ag1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="151"/>
+            <point key="canvasLocation" x="82.608695652173921" y="150.66964285714286"/>
         </scene>
     </scenes>
     <resources>
