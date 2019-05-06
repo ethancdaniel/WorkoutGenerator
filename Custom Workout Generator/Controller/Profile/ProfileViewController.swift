@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.weights = value?["weight"] as? [Double] ?? []
                 self.calculateBMI()
                 self.updateGraph()
-                self.weightInput.placeholder = "\(self.weights)"
+                self.weightInput.placeholder = "\(self.weights[self.weights.count - 1])"
                 self.heightInput.placeholder = "\(self.height)"
             }
         }
@@ -100,7 +100,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             lineChartEntry.append(value)
         }
         let line1 = LineChartDataSet(values: lineChartEntry, label: "Weight")
-        line1.colors = [NSUIColor.blue]
+        line1.colors = [NSUIColor.black]
         let weightData = LineChartData()
         weightData.addDataSet(line1)
         chart.data = weightData
