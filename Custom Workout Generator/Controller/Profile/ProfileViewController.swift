@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         personalStats.isHidden = false
         savedWorkoutsTableView.dataSource = self
         savedWorkoutsTableView.delegate = self
-        ref = Database.database().reference()
+        welcomeUser()
         loadWorkouts()
     }
     
@@ -68,6 +68,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         weights.append(weight!)
         updateGraph()
         calculateBMI(weight: weight!)
+    }
+    
+    func welcomeUser() {
+        if let user = Auth.auth().currentUser {
+            ref = Database.database().reference()
+            ref.child("Users").child(user.uid).observeSingleEvent(of: .value) { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let name = value?["fullName"] as? String ?? ""
+                let firstSpace = name.firstIndex(of: " ") ?? name.endIndex
+                let firstName = name[..<firstSpace]
+                self.welcome.text = "Welcome, \(firstName)"
+            }
+        }
     }
     
     func updateGraph() {

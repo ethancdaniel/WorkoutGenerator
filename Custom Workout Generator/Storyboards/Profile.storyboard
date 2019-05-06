@@ -103,7 +103,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQv-xY-gqm">
-                                        <rect key="frame" x="342" y="298" width="38.5" height="20.5"/>
+                                        <rect key="frame" x="342" y="298.5" width="38.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -313,7 +313,7 @@
         <scene sceneID="3eN-xY-7pD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mix-sG-9Y3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="daS-o6-jA4"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="daS-o6-jA4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fdA-QU-EoI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -329,4 +329,7 @@
             <point key="canvasLocation" x="31.884057971014496" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Profile" width="30" height="30"/>
+    </resources>
 </document>
