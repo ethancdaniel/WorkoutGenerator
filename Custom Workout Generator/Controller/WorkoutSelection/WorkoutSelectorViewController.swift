@@ -56,7 +56,10 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
         generatedWorkout = []
         let parts = data.workouts[workoutIndex].bodyParts
         let numParts = parts.count
-        let exPerPart = Int(ceil(Double(6) / Double(numParts)))
+        var exPerPart = Int(ceil(Double(6) / Double(numParts)))
+        if numParts == 4 || numParts == 5 {
+            exPerPart = 1
+        }
         var compounds = 0
         var needCompound = true
         for part in parts {
@@ -96,6 +99,18 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
                         generatedWorkout.append(exercise)
                         count += 1
                     }
+                }
+            }
+        }
+        if numParts == 4 || numParts == 5 {
+            while generatedWorkout.count < 6 {
+                let randomPartInt = Int.random(in: 0..<numParts)
+                let part = parts[randomPartInt]
+                let desiredExercises = data.exercises.filter { $0.parts.contains(part) }
+                let randomExerciseInt = Int.random(in: 0..<desiredExercises.count)
+                let exerciseToAdd = desiredExercises[randomExerciseInt]
+                if !generatedWorkout.contains(exerciseToAdd) {
+                    generatedWorkout.append(exerciseToAdd)
                 }
             }
         }

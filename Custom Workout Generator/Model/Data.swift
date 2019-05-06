@@ -71,8 +71,8 @@ class Data {
                      Exercise(name: "Lower-back Extension", parts: [Parts.lowerBack], isCompound: false, imageName: "gluteBridge"),
     ]
     
-    let workouts = [Workout(name: "Push", bodyParts: [Parts.chest, Parts.triceps, Parts.shoulders]),
-                    Workout(name: "Pull", bodyParts: [Parts.lats, Parts.lowerBack, Parts.biceps, Parts.trapezius]),
+    let workouts = [Workout(name: "Push", bodyParts: [Parts.chest, Parts.shoulders, Parts.triceps]),
+                    Workout(name: "Pull", bodyParts: [Parts.lats, Parts.trapezius, Parts.lowerBack, Parts.biceps]),
                     Workout(name: "Legs", bodyParts: [Parts.quadriceps, Parts.glutes, Parts.hamstrings, Parts.calves]),
                     Workout(name: "Arms", bodyParts: [Parts.biceps, Parts.triceps]),
                     Workout(name: "Abs", bodyParts: [Parts.abdominals])
