@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! WorkoutNamesTableViewCell
-        selectedWorkout = cell.textLabel?.text
+        selectedWorkout = cell.workoutName.text
         performSegue(withIdentifier: "profileToActiveWorkout", sender: self)
     }
     
