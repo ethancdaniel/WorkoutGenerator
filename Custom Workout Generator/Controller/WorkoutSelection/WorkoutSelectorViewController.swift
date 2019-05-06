@@ -56,10 +56,12 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
         generatedWorkout = []
         let parts = data.workouts[workoutIndex].bodyParts
         let numParts = parts.count
-        let exPerPart = Int(ceil(Double(6) / Double(numParts)))
+        var exPerPart = Int(ceil(Double(6) / Double(numParts)))
+        if numParts == 4 || numParts == 5 {
+            exPerPart = 1
+        }
         var compounds = 0
         var needCompound = true
-        var chosenExercises: [Int] = []
         for part in parts {
             if compounds < 2 {
                 needCompound = true
@@ -73,10 +75,11 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
             var hasCompound = false
             if exercisesWithPart.count <= exPerPart {
                 for exercise in exercisesWithPart {
-                    generatedWorkout.append(exercise)
-                    chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
-                    if exercise.compound {
-                        compounds += 1
+                    if !generatedWorkout.contains(exercise) {
+                        generatedWorkout.append(exercise)
+                        if exercise.compound {
+                            compounds += 1
+                        }
                     }
                 }
                 count = exPerPart
@@ -85,19 +88,29 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
                 randomInt = Int.random(in: 0..<exercisesWithPart.count)
                 let exercise = exercisesWithPart[randomInt]
                 if needCompound && !hasCompound && data.hasCompounds.contains(part) {
-                    if exercise.compound && exercise.parts.contains(part) && !chosenExercises.contains(randomInt) {
+                    if exercise.compound && exercise.parts.contains(part) && !generatedWorkout.contains(exercise) {
                         generatedWorkout.append(exercise)
-                        chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
                         hasCompound = true
                         compounds += 1
                         count += 1
                     }
                 } else {
-                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) && !exercise.compound {
+                    if exercise.parts.contains(part) && !generatedWorkout.contains(exercise) /*&& !exercise.compound*/ {
                         generatedWorkout.append(exercise)
-                        chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
                         count += 1
                     }
+                }
+            }
+        }
+        if numParts == 4 || numParts == 5 {
+            while generatedWorkout.count < 6 {
+                let randomPartInt = Int.random(in: 0..<numParts)
+                let part = parts[randomPartInt]
+                let desiredExercises = data.exercises.filter { $0.parts.contains(part) }
+                let randomExerciseInt = Int.random(in: 0..<desiredExercises.count)
+                let exerciseToAdd = desiredExercises[randomExerciseInt]
+                if !generatedWorkout.contains(exerciseToAdd) {
+                    generatedWorkout.append(exerciseToAdd)
                 }
             }
         }

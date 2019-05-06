@@ -66,12 +66,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func updatePressed(_ sender: Any) {
         let weight = Double(weightInput.text!)
+        ref = Database.database().reference()
         weightInput.placeholder = "\(weight!)"
         if heightInput.text != "" {
             height = Double(heightInput.text!)!
             heightInput.placeholder = "\(height)"
         }
         weights.append(weight!)
+        if let user = Auth.auth().currentUser {
+            self.ref.child("Users").child(user.uid).setValue(["weight": weights, "height": height])
+        }
         updateGraph()
         calculateBMI()
     }

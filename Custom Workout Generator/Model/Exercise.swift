@@ -8,7 +8,12 @@
 
 import Foundation
 
-class Exercise {
+class Exercise: Equatable {
+    
+    static func == (lhs: Exercise, rhs: Exercise) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
     let name: String
     let parts: [Parts]
     let compound: Bool
