@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HIH-5o-nLl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L3j-7B-6Uq">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="PeI-Yz-SW0">
+            <objects>
+                <navigationController id="L3j-7B-6Uq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="shP-Rr-QSH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HIH-5o-nLl" kind="relationship" relationship="rootViewController" id="YIE-uu-Bgc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-xk-uEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-978" y="110"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="uF3-zS-zIJ">
             <objects>
@@ -25,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPD-HF-v9V" userLabel="Second View">
-                                <rect key="frame" x="0.0" y="419" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="452" width="414" height="448"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gn2-o8-bBY">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
@@ -66,7 +82,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3he-g6-PXq" userLabel="First view">
-                                <rect key="frame" x="0.0" y="419" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="452" width="414" height="448"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFV-L4-BHJ">
                                         <rect key="frame" x="87" y="160" width="240" height="128"/>
@@ -76,17 +92,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="efd-AY-QRl">
-                                <rect key="frame" x="69" y="384" width="373" height="44.5"/>
+                                <rect key="frame" x="69" y="384" width="373" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwP-pG-zDv">
-                                        <rect key="frame" x="0.0" y="7" width="132" height="30"/>
+                                        <rect key="frame" x="0.0" y="7.5" width="132" height="30"/>
                                         <state key="normal" title="Personal Stats"/>
                                         <connections>
                                             <action selector="statsPressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="HNi-3g-UB0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFk-Bg-dDS">
-                                        <rect key="frame" x="261" y="7" width="112" height="30"/>
+                                        <rect key="frame" x="261" y="7.5" width="112" height="30"/>
                                         <state key="normal" title="Saved Workouts"/>
                                         <connections>
                                             <action selector="workoutsPressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="kDc-jY-o8r"/>
@@ -109,13 +125,14 @@
                             <constraint firstItem="3he-g6-PXq" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="1.5" id="fvB-vU-gfo"/>
                             <constraint firstItem="jPD-HF-v9V" firstAttribute="centerX" secondItem="MV2-PP-5QF" secondAttribute="centerX" id="kS4-ZX-mCO"/>
                             <constraint firstItem="jPD-HF-v9V" firstAttribute="width" secondItem="8Si-mZ-IH5" secondAttribute="width" id="rgO-ja-OMX"/>
-                            <constraint firstItem="EbY-RZ-6Pb" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="0.2" id="vPg-Tz-RYj"/>
+                            <constraint firstItem="EbY-RZ-6Pb" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="0.25" id="vPg-Tz-RYj"/>
                             <constraint firstItem="efd-AY-QRl" firstAttribute="width" secondItem="8Si-mZ-IH5" secondAttribute="width" multiplier="0.9" id="xC5-0K-fXK"/>
                             <constraint firstItem="jPD-HF-v9V" firstAttribute="height" secondItem="8Si-mZ-IH5" secondAttribute="height" multiplier="0.5" id="xHN-Dl-LgA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MV2-PP-5QF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="daS-o6-jA4"/>
+                    <navigationItem key="navigationItem" id="HIW-Sz-L5F"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="personalStats" destination="3he-g6-PXq" id="Qhq-dL-Los"/>
@@ -140,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exercise name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT0-Ak-nDo">
-                                <rect key="frame" x="0.0" y="44" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="YJq-2S-8jQ"/>
                                 </constraints>
@@ -149,13 +166,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sets and reps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bal-kd-1Wz" userLabel="sets and reps">
-                                <rect key="frame" x="155.5" y="100" width="103" height="122"/>
+                                <rect key="frame" x="155.5" y="144" width="103" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZD-Lw-FT0">
-                                <rect key="frame" x="20" y="258" width="374" height="374"/>
+                                <rect key="frame" x="20" y="209" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="374" id="qaC-Nt-GGL"/>
                                 </constraints>
@@ -194,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AZH-7f-yvL">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="2.5" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exerciseCell" rowHeight="70" id="16t-SN-nbp" customClass="WorkoutTableViewControllerCell" customModule="Custom_Workout_Generator" customModuleProvider="target">
@@ -241,13 +258,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eaJ-KA-VM8"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Custom Workout" id="g2d-Od-yCF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="usC-UW-gU4">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="vaY-0k-1yY" id="DqA-fV-Xd6"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Custom Workout" id="g2d-Od-yCF"/>
                     <connections>
                         <outlet property="exercisesTableView" destination="AZH-7f-yvL" id="Jbn-4D-iX4"/>
                         <segue destination="5xf-ua-4pL" kind="show" identifier="workoutToExercise" id="rhC-Or-cUv"/>

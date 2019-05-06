@@ -94,6 +94,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? WorkoutTableViewController {
             dest.currentWorkout = savedWorkoutsDict[selectedWorkout!]!
+            dest.navigationItem.title = selectedWorkout
         }
     }
 }
