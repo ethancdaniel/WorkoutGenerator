@@ -57,7 +57,6 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
         let exPerPart = Int(ceil(Double(6) / Double(numParts)))
         var compounds = 0
         var needCompound = true
-        var chosenExercises: [Int] = []
         for part in parts {
             if compounds < 2 {
                 needCompound = true
@@ -71,10 +70,11 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
             var hasCompound = false
             if exercisesWithPart.count <= exPerPart {
                 for exercise in exercisesWithPart {
-                    generatedWorkout.append(exercise)
-                    chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
-                    if exercise.compound {
-                        compounds += 1
+                    if !generatedWorkout.contains(exercise) {
+                        generatedWorkout.append(exercise)
+                        if exercise.compound {
+                            compounds += 1
+                        }
                     }
                 }
                 count = exPerPart
@@ -83,17 +83,15 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
                 randomInt = Int.random(in: 0..<exercisesWithPart.count)
                 let exercise = exercisesWithPart[randomInt]
                 if needCompound && !hasCompound && data.hasCompounds.contains(part) {
-                    if exercise.compound && exercise.parts.contains(part) && !chosenExercises.contains(randomInt) {
+                    if exercise.compound && exercise.parts.contains(part) && !generatedWorkout.contains(exercise) {
                         generatedWorkout.append(exercise)
-                        chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
                         hasCompound = true
                         compounds += 1
                         count += 1
                     }
                 } else {
-                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) && !exercise.compound {
+                    if exercise.parts.contains(part) && !generatedWorkout.contains(exercise) /*&& !exercise.compound*/ {
                         generatedWorkout.append(exercise)
-                        chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
                         count += 1
                     }
                 }
