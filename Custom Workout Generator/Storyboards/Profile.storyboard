@@ -95,9 +95,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSb-vX-3LU">
-                                        <rect key="frame" x="248" y="293" width="51" height="30"/>
-                                        <state key="normal" title="Update"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSb-vX-3LU">
+                                        <rect key="frame" x="248" y="293" width="62" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updatePressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="PJ0-y1-D32"/>
                                         </connections>
@@ -116,7 +124,7 @@
                                     <constraint firstItem="Esx-Jy-ELU" firstAttribute="leading" secondItem="3he-g6-PXq" secondAttribute="leading" constant="136" id="EuH-zz-lQH"/>
                                     <constraint firstAttribute="bottom" secondItem="Esx-Jy-ELU" secondAttribute="bottom" constant="125" id="Nbu-EN-v3W"/>
                                     <constraint firstAttribute="bottom" secondItem="OUl-3A-5Qq" secondAttribute="bottom" constant="125" id="PzU-p2-s1R"/>
-                                    <constraint firstAttribute="trailing" secondItem="OSb-vX-3LU" secondAttribute="trailing" constant="115" id="TXg-xl-1zP"/>
+                                    <constraint firstAttribute="trailing" secondItem="OSb-vX-3LU" secondAttribute="trailing" constant="104" id="TXg-xl-1zP"/>
                                     <constraint firstAttribute="bottom" secondItem="FCh-wv-1yY" secondAttribute="bottom" constant="162.5" id="YiJ-ny-quU"/>
                                     <constraint firstItem="4zY-ii-Qha" firstAttribute="height" secondItem="3he-g6-PXq" secondAttribute="height" multiplier="0.6" id="b89-Oa-n7k"/>
                                     <constraint firstItem="4zY-ii-Qha" firstAttribute="width" secondItem="3he-g6-PXq" secondAttribute="width" id="bnx-WI-43Y"/>
@@ -134,14 +142,20 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwP-pG-zDv">
                                         <rect key="frame" x="0.0" y="7.5" width="132" height="30"/>
-                                        <state key="normal" title="Personal Stats"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Personal Stats">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="statsPressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="HNi-3g-UB0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFk-Bg-dDS">
                                         <rect key="frame" x="261" y="7.5" width="112" height="30"/>
-                                        <state key="normal" title="Saved Workouts"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Saved Workouts">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="workoutsPressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="kDc-jY-o8r"/>
                                         </connections>
@@ -169,7 +183,7 @@
                             <constraint firstItem="RCO-Z5-yOL" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="0.55" id="j1P-r8-i6L"/>
                             <constraint firstItem="jPD-HF-v9V" firstAttribute="centerX" secondItem="MV2-PP-5QF" secondAttribute="centerX" id="kS4-ZX-mCO"/>
                             <constraint firstItem="jPD-HF-v9V" firstAttribute="width" secondItem="8Si-mZ-IH5" secondAttribute="width" id="rgO-ja-OMX"/>
-                            <constraint firstItem="EbY-RZ-6Pb" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="0.25" id="vPg-Tz-RYj"/>
+                            <constraint firstItem="EbY-RZ-6Pb" firstAttribute="centerY" secondItem="MV2-PP-5QF" secondAttribute="centerY" multiplier="0.3" id="vPg-Tz-RYj"/>
                             <constraint firstItem="RCO-Z5-yOL" firstAttribute="height" secondItem="8Si-mZ-IH5" secondAttribute="height" multiplier="0.15" id="xAU-0Q-PSm"/>
                             <constraint firstItem="efd-AY-QRl" firstAttribute="width" secondItem="8Si-mZ-IH5" secondAttribute="width" multiplier="0.9" id="xC5-0K-fXK"/>
                             <constraint firstItem="jPD-HF-v9V" firstAttribute="height" secondItem="8Si-mZ-IH5" secondAttribute="height" multiplier="0.5" id="xHN-Dl-LgA"/>
