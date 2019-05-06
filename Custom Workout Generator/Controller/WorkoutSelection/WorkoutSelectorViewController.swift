@@ -64,9 +64,21 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
             } else {
                 needCompound = false
             }
+            
+            let exercises = data.exercises.filter { $0.parts.contains(part) }
             var count = 0
             var randomInt: Int
             var hasCompound = false
+            if exercises.count <= exPerPart {
+                for exercise in exercises {
+                    generatedWorkout.append(exercise)
+                    chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
+                    if exercise.compound {
+                        compounds += 1
+                    }
+                }
+                count = exPerPart
+            }
             while count < exPerPart {
                 randomInt = Int.random(in: 0..<data.exercises.count)
                 let exercise = data.exercises[randomInt]
@@ -79,7 +91,7 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
                         count += 1
                     }
                 } else {
-                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) {
+                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) /*&& !exercise.compound*/ {
                         generatedWorkout.append(exercise)
                         chosenExercises.append(randomInt)
                         count += 1
