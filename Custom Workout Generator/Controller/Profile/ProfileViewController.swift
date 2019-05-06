@@ -83,6 +83,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let firstSpace = name.firstIndex(of: " ") ?? name.endIndex
                 let firstName = name[..<firstSpace]
                 self.welcome.text = "Welcome, \(firstName)"
+                self.height = value?["height"] as? Double ?? 0.0
+                self.weights = value?["weight"] as? [Double] ?? []
             }
         }
     }
