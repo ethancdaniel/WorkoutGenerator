@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import Charts
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,15 +19,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var savedWorkouts: UIView!
     @IBOutlet weak var personalStats: UIView!
     @IBOutlet weak var savedWorkoutsTableView: UITableView!
+    @IBOutlet weak var heightInput: UITextField!
+    @IBOutlet weak var weightInput: UITextField!
+    @IBOutlet weak var chart: LineChartView!
+    @IBOutlet weak var bmiLabel: UILabel!
+    
     
     var ref: DatabaseReference!
     var savedWorkoutsDict: [String:[Exercise]] = [:]
     var selectedWorkout: String?
+    var weights: [Double] = []
+    var height: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         statsButton.isSelected = true
         savedWorkouts.isHidden = true
+        personalStats.isHidden = false
         savedWorkoutsTableView.dataSource = self
         savedWorkoutsTableView.delegate = self
         ref = Database.database().reference()
@@ -49,6 +58,35 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             savedWorkouts.isHidden = false
             personalStats.isHidden = true
         }
+    }
+    
+    @IBAction func updatePressed(_ sender: Any) {
+        let weight = Double(weightInput.text!)
+        if heightInput.text != "" {
+            height = Double(heightInput.text!)!
+        }
+        weights.append(weight!)
+        updateGraph()
+        calculateBMI(weight: weight!)
+    }
+    
+    func updateGraph() {
+        var lineChartEntry  = [ChartDataEntry]()
+        for i in 0..<weights.count {
+            let value = ChartDataEntry(x: Double(i), y: weights[i])
+            lineChartEntry.append(value)
+        }
+        let line1 = LineChartDataSet(values: lineChartEntry, label: "Weight")
+        line1.colors = [NSUIColor.blue]
+        let weightData = LineChartData()
+        weightData.addDataSet(line1)
+        chart.data = weightData
+        chart.chartDescription?.text = "Weight Chart"
+    }
+    
+    func calculateBMI(weight: Double) {
+        let bmi = Int(weight / pow(height, 2) * 10000)
+        bmiLabel.text! = "BMI: \(bmi)"
     }
     
     func loadWorkouts() {
