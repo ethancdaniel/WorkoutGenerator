@@ -73,7 +73,7 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
             if let user = Auth.auth().currentUser {
                 var index = 0
                 for exercise in self.currentWorkout {
-                    self.ref.child("Saved Workouts").child(user.uid).child(text).child(String(index) + exercise.name).setValue(["isCompound": exercise.compound, "imageName": exercise.imageName])
+                    self.ref.child("Saved Workouts").child(user.uid).child(text).child(exercise.name).setValue(["isCompound": exercise.compound, "imageName": exercise.imageName, "index": index])
                     index += 1
                 }
             }
