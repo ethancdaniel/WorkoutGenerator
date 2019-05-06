@@ -115,22 +115,30 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func loadWorkouts() {
         if let currentUser = Auth.auth().currentUser {
             ref = Database.database().reference().child("Saved Workouts").child(currentUser.uid)
-            ref.observe(DataEventType.value) { (snapshot) in
-                for child in snapshot.children.allObjects as! [DataSnapshot] {
-                    for exercise in child.children.allObjects as! [DataSnapshot] {
-                        var exerciseName = exercise.key
-                        let dict = exercise.value as? [String:AnyObject] ?? [:]
-                        let isCompound = dict["isCompound"]
-                        let imageName = dict["imageName"]
-                        exerciseName.remove(at: exerciseName.startIndex)
-                        if let _ = self.savedWorkoutsDict[child.key] {
-                            self.savedWorkoutsDict[child.key]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: imageName as! String))
-                        } else {
-                            self.savedWorkoutsDict[child.key] = [Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: imageName as! String)]
+            ref.observe(.value) { (snapshot) in
+                self.savedWorkoutsDict = [:]
+                if let workoutNameDict = snapshot.value as? [String:Any] {
+                    for workoutName in workoutNameDict.keys {
+                        if let exercises = workoutNameDict[workoutName] as? [String:Any] {
+                            for exercise in exercises.keys {
+                                if let values = exercises[exercise] as? [String:Any] {
+                                    let isCompound = values["isCompound"] as! Bool
+                                    let imageName = values["imageName"] as! String
+                                    var exerciseName = exercise
+                                    exerciseName.remove(at: exercise.startIndex)
+                                    if let _ = self.savedWorkoutsDict[workoutName] {
+                                        self.savedWorkoutsDict[workoutName]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound, imageName: imageName))
+                                    } else {
+                                        self.savedWorkoutsDict[workoutName] = [Exercise(name: exerciseName, parts: [], isCompound: isCompound, imageName: imageName)]
+                                    }
+                                }
+                            }
                         }
                     }
+                    DispatchQueue.main.async {
+                        self.savedWorkoutsTableView.reloadData()
+                    }
                 }
-                self.savedWorkoutsTableView.reloadData()
             }
         }
     }
