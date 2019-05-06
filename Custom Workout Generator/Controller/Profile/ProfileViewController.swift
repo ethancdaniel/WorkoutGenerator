@@ -131,7 +131,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                                     let isCompound = values["isCompound"] as! Bool
                                     let imageName = values["imageName"] as! String
                                     var exerciseName = exercise
-                                    exerciseName.remove(at: exercise.startIndex)
                                     if let _ = self.savedWorkoutsDict[workoutName] {
                                         self.savedWorkoutsDict[workoutName]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound, imageName: imageName))
                                     } else {
