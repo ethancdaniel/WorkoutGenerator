@@ -40,8 +40,8 @@ class SignUp: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
-        if let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let weight = weightTextField.text, let height = heightTextField.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+        if emailTextField.text != "", passwordTextField.text  != "", nameTextField.text != "",  weightTextField.text != "", heightTextField.text  != "" {
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
                 if let err = error {
                     let alertController = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
                     
@@ -50,7 +50,7 @@ class SignUp: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                     
                     self.present(alertController, animated: true, completion: nil)
                 } else {
-                    self.ref.child("Users").child((authResult?.user.uid)!).setValue(["fullName": name, "weight": [Double(weight)], "height": Double(height)])
+                    self.ref.child("Users").child((authResult?.user.uid)!).setValue(["fullName": self.nameTextField.text!, "weight": [Double(self.weightTextField.text!)], "height": Double(self.heightTextField.text!)])
                     let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as UIViewController
                     self.present(rootVC, animated: true, completion: nil)
                 }
