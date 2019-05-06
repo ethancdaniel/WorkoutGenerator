@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-//        if let userID = Auth.auth().currentUser?.uid {
-//            print(userID)
-//            let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as UIViewController
-//            rootVC.view.frame = UIScreen.main.bounds
-//            UIView.transition(with: self.window!, duration: 0.25, options: .transitionCrossDissolve, animations: {
-//                self.window?.rootViewController = rootVC
-//            }, completion: nil)
-//        }
+        if let userID = Auth.auth().currentUser?.uid {
+            print(userID)
+            let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as UIViewController
+            rootVC.view.frame = UIScreen.main.bounds
+            UIView.transition(with: self.window!, duration: 0.25, options: .transitionCrossDissolve, animations: {
+                self.window?.rootViewController = rootVC
+            }, completion: nil)
+        }
         
         return true
     }
