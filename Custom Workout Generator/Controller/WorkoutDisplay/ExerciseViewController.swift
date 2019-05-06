@@ -22,6 +22,7 @@ class ExerciseViewController: UIViewController {
         super.viewDidLoad()
         exerciseName.text = exercise!.name
         setsAndReps.text = volume!
+        exerciseImage.contentMode = .scaleAspectFill
         exerciseImage.image = UIImage(named: exercise!.imageName)
     }
 }

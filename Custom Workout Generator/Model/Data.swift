@@ -10,8 +10,8 @@ import Foundation
 
 class Data {
     let exercises = [Exercise(name: "Bench Press", parts: [Parts.chest], isCompound: true, imageName: "benchPress"),
-                     Exercise(name: "Barbell Shoulder Press", parts: [Parts.shoulders], isCompound: false, imageName: "barbellShoulderPress"),
-                     Exercise(name: "Dumbbell Shoulder Press", parts: [Parts.shoulders], isCompound: false, imageName: "dumbbellShoulderPress"),
+                     Exercise(name: "Barbell Shoulder Press", parts: [Parts.shoulders], isCompound: true, imageName: "barbellShoulderPress"),
+                     Exercise(name: "Dumbbell Shoulder Press", parts: [Parts.shoulders], isCompound: true, imageName: "dumbbellShoulderPress"),
                      Exercise(name: "Dumbbell Lateral Raise", parts: [Parts.shoulders], isCompound: false, imageName: "dumbbellLateralRaise"),
                      Exercise(name: "Dumbbell Front Raise", parts: [Parts.shoulders], isCompound: false, imageName: "dumbbellFrontRaise"),
                      Exercise(name: "Dumbbell Rear Lateral Raise", parts: [Parts.shoulders], isCompound: false, imageName: "dumbbellRearLateralRaise"),
@@ -66,11 +66,15 @@ class Data {
                      Exercise(name: "Standing Calf Raises", parts: [Parts.calves], isCompound: false, imageName: "standingCalfRaise"),
                      Exercise(name: "Stairs (machine)", parts: [Parts.calves], isCompound: false, imageName: "stairs"),
                      Exercise(name: "Seated Calf Raises", parts: [Parts.calves], isCompound: false, imageName: "seatedCalfRaise"),
+                     Exercise(name: "Hyperextension", parts: [Parts.lowerBack], isCompound: false, imageName: "hyperextension"),
+                     Exercise(name: "Rear Deltoid Fly", parts: [Parts.shoulders], isCompound: false, imageName: "rearDeltFly"),
+                     Exercise(name: "Lower-back Extension", parts: [Parts.lowerBack], isCompound: false, imageName: "gluteBridge"),
     ]
     
     let workouts = [Workout(name: "Push", bodyParts: [Parts.chest, Parts.triceps, Parts.shoulders]),
                     Workout(name: "Pull", bodyParts: [Parts.lats, Parts.lowerBack, Parts.biceps, Parts.trapezius]),
                     Workout(name: "Legs", bodyParts: [Parts.quadriceps, Parts.glutes, Parts.hamstrings, Parts.calves]),
+                    Workout(name: "Arms", bodyParts: [Parts.biceps, Parts.triceps]),
                     Workout(name: "Abs", bodyParts: [Parts.abdominals])
     ]
     
