@@ -57,10 +57,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             ref.observe(DataEventType.value) { (snapshot) in
                 for child in snapshot.children.allObjects as! [DataSnapshot] {
                     for exercise in child.children.allObjects as! [DataSnapshot] {
-                        let exerciseName = exercise.key
+                        var exerciseName = exercise.key
                         let dict = exercise.value as? [String:AnyObject] ?? [:]
                         let isCompound = dict["isCompound"]
                         let imageName = dict["imageName"]
+                        exerciseName.remove(at: exerciseName.startIndex)
                         if let _ = self.savedWorkoutsDict[child.key] {
                             self.savedWorkoutsDict[child.key]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: imageName as! String))
                         } else {
