@@ -24,7 +24,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var weightInput: UITextField!
     @IBOutlet weak var chart: LineChartView!
     @IBOutlet weak var bmiLabel: UILabel!
-    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var mainPhoto: UIImageView!
+    
     
     
     var ref: DatabaseReference!
@@ -42,6 +43,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         savedWorkoutsTableView.delegate = self
         welcomeUser()
         loadWorkouts()
+        mainPhoto.image = UIImage(named: "MainScreen")
     }
 
     @IBAction func statsPressed(_ sender: Any) {
