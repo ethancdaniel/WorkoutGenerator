@@ -71,8 +71,10 @@ class WorkoutTableViewController: UIViewController, UITableViewDataSource, UITab
         let action = UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             guard let text = alert?.textFields![0].text else { return }
             if let user = Auth.auth().currentUser {
+                var index = 0
                 for exercise in self.currentWorkout {
-                    self.ref.child("Saved Workouts").child(user.uid).child(text).child(exercise.name).setValue(["isCompound": exercise.compound])
+                    self.ref.child("Saved Workouts").child(user.uid).child(text).child(String(index) + exercise.name).setValue(["isCompound": exercise.compound, "imageName": exercise.imageName])
+                    index += 1
                 }
             }
             self.present(savedConfirmation, animated: true, completion: nil)
