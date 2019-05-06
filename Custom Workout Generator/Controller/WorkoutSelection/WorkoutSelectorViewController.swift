@@ -91,7 +91,7 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
                         count += 1
                     }
                 } else {
-                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) /*&& !exercise.compound*/ {
+                    if exercise.parts.contains(part) && !chosenExercises.contains(randomInt) && !exercise.compound {
                         generatedWorkout.append(exercise)
                         chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
                         count += 1
