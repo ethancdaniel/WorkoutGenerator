@@ -124,11 +124,66 @@
                         <outlet property="statsButton" destination="dwP-pG-zDv" id="Rh0-iy-qA8"/>
                         <outlet property="welcome" destination="EbY-RZ-6Pb" id="yso-l0-Ktd"/>
                         <outlet property="workoutsButton" destination="OFk-Bg-dDS" id="1Fc-d7-Iyh"/>
+                        <segue destination="5xf-ua-4pL" kind="show" identifier="profileToActiveWorkout" id="Prj-2T-soW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwl-pP-maH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="95.758928571428569"/>
+        </scene>
+        <!--Exercise View Controller-->
+        <scene sceneID="GHr-2o-6fV">
+            <objects>
+                <viewController id="5xf-ua-4pL" customClass="ExerciseViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fIA-8T-gDK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exercise name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT0-Ak-nDo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="YJq-2S-8jQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sets and reps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bal-kd-1Wz" userLabel="sets and reps">
+                                <rect key="frame" x="155.5" y="100" width="103" height="122"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZD-Lw-FT0">
+                                <rect key="frame" x="20" y="258" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="qaC-Nt-GGL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BZD-Lw-FT0" firstAttribute="centerX" secondItem="Bal-kd-1Wz" secondAttribute="centerX" id="B0v-By-w8d"/>
+                            <constraint firstItem="Bal-kd-1Wz" firstAttribute="top" secondItem="FT0-Ak-nDo" secondAttribute="bottom" constant="8" symbolic="YES" id="LeC-b6-SPn"/>
+                            <constraint firstItem="FT0-Ak-nDo" firstAttribute="top" secondItem="10H-Mi-tlO" secondAttribute="top" id="Mct-1v-Sd4"/>
+                            <constraint firstItem="10H-Mi-tlO" firstAttribute="bottom" secondItem="BZD-Lw-FT0" secondAttribute="bottom" constant="230" id="Nyw-OI-G0n"/>
+                            <constraint firstItem="BZD-Lw-FT0" firstAttribute="leading" secondItem="fIA-8T-gDK" secondAttribute="leadingMargin" id="YUz-CF-yPy"/>
+                            <constraint firstItem="BZD-Lw-FT0" firstAttribute="top" secondItem="Bal-kd-1Wz" secondAttribute="bottom" constant="36" id="bAO-HM-LBw"/>
+                            <constraint firstItem="FT0-Ak-nDo" firstAttribute="leading" secondItem="fIA-8T-gDK" secondAttribute="leading" id="lwT-ac-IWw"/>
+                            <constraint firstItem="FT0-Ak-nDo" firstAttribute="centerX" secondItem="Bal-kd-1Wz" secondAttribute="centerX" id="pch-KG-Y7w"/>
+                            <constraint firstItem="BZD-Lw-FT0" firstAttribute="trailing" secondItem="fIA-8T-gDK" secondAttribute="trailingMargin" id="pwe-YD-Vej"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="10H-Mi-tlO"/>
+                    </view>
+                    <connections>
+                        <outlet property="exerciseImage" destination="BZD-Lw-FT0" id="HIG-WC-dPw"/>
+                        <outlet property="exerciseName" destination="FT0-Ak-nDo" id="Axr-nh-So4"/>
+                        <outlet property="setsAndReps" destination="Bal-kd-1Wz" id="ncz-Yk-QUW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5o-Ls-bQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="84"/>
         </scene>
     </scenes>
 </document>

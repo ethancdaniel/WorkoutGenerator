@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var ref: DatabaseReference!
     var savedWorkoutsDict: [String:[Exercise]] = [:]
+    var selectedWorkout: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +60,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         let exerciseName = exercise.key
                         let dict = exercise.value as? [String:AnyObject] ?? [:]
                         let isCompound = dict["isCompound"]
+                        let imageName = dict["imageName"]
                         if let _ = self.savedWorkoutsDict[child.key] {
-                            self.savedWorkoutsDict[child.key]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: "benchPress"))
+                            self.savedWorkoutsDict[child.key]!.append(Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: imageName as! String))
                         } else {
-                            self.savedWorkoutsDict[child.key] = [Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: "benchPress")]
+                            self.savedWorkoutsDict[child.key] = [Exercise(name: exerciseName, parts: [], isCompound: isCompound as! Bool, imageName: imageName as! String)]
                         }
                     }
                 }
@@ -81,5 +83,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! WorkoutNamesTableViewCell
+        selectedWorkout = cell.textLabel?.text
+        performSegue(withIdentifier: "profileToActiveWorkout", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? WorkoutTableViewController {
+            dest.currentWorkout = savedWorkoutsDict[selectedWorkout!]!
+        }
     }
 }
