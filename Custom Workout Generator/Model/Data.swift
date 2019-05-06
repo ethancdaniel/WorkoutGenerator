@@ -69,7 +69,7 @@ class Data {
     ]
     
     let workouts = [Workout(name: "Push", bodyParts: [Parts.chest, Parts.triceps, Parts.shoulders]),
-                    Workout(name: "Pull", bodyParts: [Parts.lats, Parts.lowerBack, Parts.biceps]),
+                    Workout(name: "Pull", bodyParts: [Parts.lats, Parts.lowerBack, Parts.biceps, Parts.trapezius]),
                     Workout(name: "Legs", bodyParts: [Parts.quadriceps, Parts.glutes, Parts.hamstrings, Parts.calves]),
                     Workout(name: "Abs", bodyParts: [Parts.abdominals])
     ]
