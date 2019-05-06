@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var weightInput: UITextField!
     @IBOutlet weak var chart: LineChartView!
     @IBOutlet weak var bmiLabel: UILabel!
+    @IBOutlet weak var profilePhoto: UIImageView!
     
     
     var ref: DatabaseReference!
@@ -42,6 +43,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadWorkouts()
     }
     
+
     @IBAction func statsPressed(_ sender: Any) {
         if !statsButton.isSelected {
             statsButton.isSelected = true
@@ -62,8 +64,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func updatePressed(_ sender: Any) {
         let weight = Double(weightInput.text!)
+        weightInput.placeholder = "\(weight!)"
         if heightInput.text != "" {
             height = Double(heightInput.text!)!
+            heightInput.placeholder = "\(height)"
         }
         weights.append(weight!)
         updateGraph()
