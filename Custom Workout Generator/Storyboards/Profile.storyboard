@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L3j-7B-6Uq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mix-sG-9Y3">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,23 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="PeI-Yz-SW0">
-            <objects>
-                <navigationController id="L3j-7B-6Uq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="shP-Rr-QSH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="HIH-5o-nLl" kind="relationship" relationship="rootViewController" id="YIE-uu-Bgc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-xk-uEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-978" y="110"/>
-        </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="uF3-zS-zIJ">
             <objects>
                 <viewController id="HIH-5o-nLl" customClass="ProfileViewController" customModule="Custom_Workout_Generator" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,8 +115,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MV2-PP-5QF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="daS-o6-jA4"/>
-                    <navigationItem key="navigationItem" id="HIW-Sz-L5F"/>
+                    <navigationItem key="navigationItem" id="aJ3-hP-sG4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="personalStats" destination="3he-g6-PXq" id="Qhq-dL-Los"/>
@@ -146,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwl-pP-maH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.884057971014496" y="95.758928571428569"/>
+            <point key="canvasLocation" x="942.02898550724649" y="95.758928571428569"/>
         </scene>
         <!--Exercise View Controller-->
         <scene sceneID="GHr-2o-6fV">
@@ -200,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5o-Ls-bQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1954" y="96"/>
+            <point key="canvasLocation" x="2863.768115942029" y="95.758928571428569"/>
         </scene>
         <!--Custom Workout-->
         <scene sceneID="VW5-rU-Flu">
@@ -266,7 +249,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9he-Yf-12Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="96"/>
+            <point key="canvasLocation" x="1973.913043478261" y="95.758928571428569"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="3eN-xY-7pD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mix-sG-9Y3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="daS-o6-jA4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fdA-QU-EoI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HIH-5o-nLl" kind="relationship" relationship="rootViewController" id="r91-pN-96T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AzM-TX-bMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="95.758928571428569"/>
         </scene>
     </scenes>
 </document>
