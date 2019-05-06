@@ -17,7 +17,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynt-ef-rIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="465" y="-289"/>
+            <point key="canvasLocation" x="464" y="-140"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FmF-0N-2rc">
@@ -27,12 +27,11 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nF0-lp-iZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="-334"/>
+            <point key="canvasLocation" x="467" y="-385"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VpB-fB-uIZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xlo-43-1Nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="TabBarController" id="mog-ut-oUA" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xfg-g1-qFX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -44,6 +43,7 @@
                         <segue destination="xfg-va-453" kind="relationship" relationship="viewControllers" id="Opr-ok-ZuF"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xlo-43-1Nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-458" y="-238"/>
         </scene>

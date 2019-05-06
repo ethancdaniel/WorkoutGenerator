@@ -14,7 +14,7 @@
         <scene sceneID="tGB-a9-4ec">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" id="yDe-dv-hHu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Generate Workout" id="Br7-iV-xcw"/>
+                    <tabBarItem key="tabBarItem" title="Generate Workout" image="Generate Workout" id="Br7-iV-xcw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jMp-uo-uHX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -469,6 +469,7 @@
         <image name="Calves" width="226" height="147"/>
         <image name="Chest" width="192" height="96"/>
         <image name="Forearms" width="429" height="169"/>
+        <image name="Generate Workout" width="30" height="30"/>
         <image name="Glutes" width="205" height="160"/>
         <image name="Hamstrings" width="225" height="304"/>
         <image name="Human Body" width="1200" height="1192"/>
