@@ -109,7 +109,6 @@
                         <outlet property="emailTextField" destination="Iy6-Rk-3sD" id="xvI-UW-pY2"/>
                         <outlet property="passwordTextField" destination="eSe-gH-SEy" id="XCU-KN-pHT"/>
                         <segue destination="D3O-IV-1qL" kind="show" identifier="segueToSignUp" id="gfR-21-hRB"/>
-                        <segue destination="8wl-Z4-eal" kind="show" identifier="signInToHome" id="NSm-Y6-u4B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUs-N4-ewQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,25 +200,15 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="ye6-cR-Bug" id="EKo-Mt-2IZ"/>
+                        <outlet property="heightTextField" destination="0qW-UL-EAT" id="5gE-5R-JAi"/>
                         <outlet property="nameTextField" destination="1iG-Cv-ggK" id="jRP-uu-dEA"/>
                         <outlet property="passwordTextField" destination="iqS-bl-sBr" id="4RC-3R-UOd"/>
-                        <segue destination="8wl-Z4-eal" kind="show" identifier="signUpToHome" id="akK-85-lRw"/>
+                        <outlet property="weightTextField" destination="dTy-P7-IMh" id="BdW-a4-o3X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9V-qk-FSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562" y="-31"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="yje-Lw-80K">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="8wl-Z4-eal" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aTy-6A-oWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="123" y="385"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="akK-85-lRw"/>
-    </inferredMetricsTieBreakers>
 </document>
