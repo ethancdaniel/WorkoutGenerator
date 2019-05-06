@@ -68,12 +68,66 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3he-g6-PXq" userLabel="First view">
                                 <rect key="frame" x="0.0" y="452" width="414" height="448"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFV-L4-BHJ">
-                                        <rect key="frame" x="87" y="160" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OUl-3A-5Qq">
+                                        <rect key="frame" x="17" y="293" width="97" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Esx-Jy-ELU">
+                                        <rect key="frame" x="136" y="293" width="97" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zY-ii-Qha" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="-11.5" width="414" height="269"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight (kg):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-wv-1yY">
+                                        <rect key="frame" x="17" y="265" width="93.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height (cm):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4G-MM-XDp">
+                                        <rect key="frame" x="136" y="265" width="95.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSb-vX-3LU">
+                                        <rect key="frame" x="248" y="293" width="51" height="30"/>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="updatePressed:" destination="HIH-5o-nLl" eventType="touchUpInside" id="PJ0-y1-D32"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQv-xY-gqm">
+                                        <rect key="frame" x="342" y="298" width="38.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dQv-xY-gqm" secondAttribute="trailing" constant="33.5" id="2RC-E7-643"/>
+                                    <constraint firstItem="4zY-ii-Qha" firstAttribute="centerX" secondItem="3he-g6-PXq" secondAttribute="centerX" id="BIT-6X-SMa"/>
+                                    <constraint firstItem="Esx-Jy-ELU" firstAttribute="leading" secondItem="3he-g6-PXq" secondAttribute="leading" constant="136" id="EuH-zz-lQH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Esx-Jy-ELU" secondAttribute="bottom" constant="125" id="Nbu-EN-v3W"/>
+                                    <constraint firstAttribute="bottom" secondItem="OUl-3A-5Qq" secondAttribute="bottom" constant="125" id="PzU-p2-s1R"/>
+                                    <constraint firstAttribute="trailing" secondItem="OSb-vX-3LU" secondAttribute="trailing" constant="115" id="TXg-xl-1zP"/>
+                                    <constraint firstAttribute="bottom" secondItem="FCh-wv-1yY" secondAttribute="bottom" constant="162.5" id="YiJ-ny-quU"/>
+                                    <constraint firstItem="4zY-ii-Qha" firstAttribute="height" secondItem="3he-g6-PXq" secondAttribute="height" multiplier="0.6" id="b89-Oa-n7k"/>
+                                    <constraint firstItem="4zY-ii-Qha" firstAttribute="width" secondItem="3he-g6-PXq" secondAttribute="width" id="bnx-WI-43Y"/>
+                                    <constraint firstItem="OUl-3A-5Qq" firstAttribute="leading" secondItem="3he-g6-PXq" secondAttribute="leading" constant="17" id="eNw-sb-Fmr"/>
+                                    <constraint firstAttribute="bottom" secondItem="dQv-xY-gqm" secondAttribute="bottom" constant="129" id="fpX-De-1QM"/>
+                                    <constraint firstItem="FCh-wv-1yY" firstAttribute="leading" secondItem="3he-g6-PXq" secondAttribute="leading" constant="17" id="l3K-OD-Xac"/>
+                                    <constraint firstAttribute="bottom" secondItem="j4G-MM-XDp" secondAttribute="bottom" constant="162.5" id="mPh-OV-h4y"/>
+                                    <constraint firstItem="j4G-MM-XDp" firstAttribute="leading" secondItem="3he-g6-PXq" secondAttribute="leading" constant="136" id="vSc-4B-DDl"/>
+                                    <constraint firstItem="4zY-ii-Qha" firstAttribute="centerY" secondItem="3he-g6-PXq" secondAttribute="centerY" multiplier="0.55" id="wWs-Ib-bLl"/>
+                                    <constraint firstAttribute="bottom" secondItem="OSb-vX-3LU" secondAttribute="bottom" constant="125" id="xV1-EB-PZo"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="efd-AY-QRl">
                                 <rect key="frame" x="69" y="384" width="373" height="45"/>
@@ -118,10 +172,14 @@
                     <navigationItem key="navigationItem" id="aJ3-hP-sG4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bmiLabel" destination="dQv-xY-gqm" id="oWk-oM-6Cc"/>
+                        <outlet property="chart" destination="4zY-ii-Qha" id="VWZ-gQ-T45"/>
+                        <outlet property="heightInput" destination="Esx-Jy-ELU" id="JDH-Oi-bwe"/>
                         <outlet property="personalStats" destination="3he-g6-PXq" id="Qhq-dL-Los"/>
                         <outlet property="savedWorkouts" destination="jPD-HF-v9V" id="0Lo-MO-aki"/>
                         <outlet property="savedWorkoutsTableView" destination="gn2-o8-bBY" id="ZBY-er-yPC"/>
                         <outlet property="statsButton" destination="dwP-pG-zDv" id="Rh0-iy-qA8"/>
+                        <outlet property="weightInput" destination="OUl-3A-5Qq" id="dUm-Q7-s03"/>
                         <outlet property="welcome" destination="EbY-RZ-6Pb" id="yso-l0-Ktd"/>
                         <outlet property="workoutsButton" destination="OFk-Bg-dDS" id="1Fc-d7-Iyh"/>
                         <segue destination="vaY-0k-1yY" kind="show" identifier="profileToActiveWorkout" id="xgR-SJ-Ukg"/>
