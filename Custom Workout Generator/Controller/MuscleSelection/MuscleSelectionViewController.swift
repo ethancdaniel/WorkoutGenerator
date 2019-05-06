@@ -70,6 +70,7 @@ class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func generateWorkout(listOfParts: [Parts]) {
+        generatedWorkout = []
         let numParts = listOfParts.count
         let exPerPart = Int(ceil(Double(6 / numParts)))
         var compounds = 0
@@ -81,15 +82,28 @@ class MuscleSelectionViewController: UIViewController, UICollectionViewDelegate,
             } else {
                 needCompound = false
             }
+            let exercises = data.exercises.filter { $0.parts.contains(part) }
             var count = 0
             var randomInt: Int
+            var hasCompound = false
+            if exercises.count <= exPerPart {
+                for exercise in exercises {
+                    generatedWorkout.append(exercise)
+                    chosenExercises.append(data.exercises.firstIndex(where: {$0.name == exercise.name} )!)
+                    if exercise.compound {
+                        compounds += 1
+                    }
+                }
+                count = exPerPart
+            }
             while count < exPerPart {
                 randomInt = Int.random(in: 0..<data.exercises.count)
                 let exercise = data.exercises[randomInt]
-                if needCompound == true {
+                if needCompound && !hasCompound && data.hasCompounds.contains(part) {
                     if exercise.compound && exercise.parts.contains(part) && !chosenExercises.contains(randomInt) {
                         generatedWorkout.append(exercise)
                         chosenExercises.append(randomInt)
+                        hasCompound = true
                         compounds += 1
                         count += 1
                     }
