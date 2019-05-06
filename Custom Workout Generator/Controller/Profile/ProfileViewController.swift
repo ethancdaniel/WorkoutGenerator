@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import Charts
+import ChameleonFramework
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
