@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var weightInput: UITextField!
     @IBOutlet weak var chart: LineChartView!
     @IBOutlet weak var bmiLabel: UILabel!
+    @IBOutlet weak var profilePhoto: UIImageView!
     
     
     var ref: DatabaseReference!
@@ -41,7 +42,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         welcomeUser()
         loadWorkouts()
     }
-    
+
     @IBAction func statsPressed(_ sender: Any) {
         if !statsButton.isSelected {
             statsButton.isSelected = true
@@ -62,12 +63,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func updatePressed(_ sender: Any) {
         let weight = Double(weightInput.text!)
+        weightInput.placeholder = "\(weight!)"
         if heightInput.text != "" {
             height = Double(heightInput.text!)!
+            heightInput.placeholder = "\(height)"
         }
         weights.append(weight!)
         updateGraph()
-        calculateBMI(weight: weight!)
+        calculateBMI()
     }
     
     func welcomeUser() {
@@ -79,6 +82,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let firstSpace = name.firstIndex(of: " ") ?? name.endIndex
                 let firstName = name[..<firstSpace]
                 self.welcome.text = "Welcome, \(firstName)"
+                self.height = value?["height"] as? Double ?? 0
+                self.weights = value?["weight"] as? [Double] ?? []
+                self.calculateBMI()
+                self.updateGraph()
+                self.weightInput.placeholder = "\(self.weights)"
+                self.heightInput.placeholder = "\(self.height)"
             }
         }
     }
@@ -97,8 +106,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         chart.chartDescription?.text = "Weight Chart"
     }
     
-    func calculateBMI(weight: Double) {
-        let bmi = Int(weight / pow(height, 2) * 10000)
+    func calculateBMI() {
+        let bmi = Int(weights[weights.count - 1] / pow(height, 2) * 10000)
         bmiLabel.text! = "BMI: \(bmi)"
     }
     

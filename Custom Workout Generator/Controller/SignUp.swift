@@ -50,7 +50,7 @@ class SignUp: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                     
                     self.present(alertController, animated: true, completion: nil)
                 } else {
-                    self.ref.child("Users").child((authResult?.user.uid)!).setValue(["fullName": name, "weight": [Int(weight)], "height": Int(height)])
+                    self.ref.child("Users").child((authResult?.user.uid)!).setValue(["fullName": name, "weight": [Double(weight)], "height": Double(height)])
                     let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as UIViewController
                     self.present(rootVC, animated: true, completion: nil)
                 }
