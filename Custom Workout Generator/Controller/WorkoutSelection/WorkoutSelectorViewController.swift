@@ -32,6 +32,8 @@ class WorkoutSelectorViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "workout_option", for: indexPath) as? WorkoutCollectionViewCell {
             cell.workoutName.text = data.workouts[indexPath.item].name
+            cell.layer.cornerRadius = 10
+            cell.layer.masksToBounds = true
             return cell
         }
         return UICollectionViewCell()

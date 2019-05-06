@@ -83,6 +83,11 @@
                                 <state key="normal" title="Create Your Own!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createOwnPressed:" destination="ZfA-Y1-Sc9" eventType="touchUpInside" id="M2B-f6-6bH"/>
                                 </connections>
