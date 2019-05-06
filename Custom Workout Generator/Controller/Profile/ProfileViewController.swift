@@ -42,7 +42,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         welcomeUser()
         loadWorkouts()
     }
-    
 
     @IBAction func statsPressed(_ sender: Any) {
         if !statsButton.isSelected {
@@ -71,7 +70,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         weights.append(weight!)
         updateGraph()
-        calculateBMI(weight: weight!)
+        calculateBMI()
     }
     
     func welcomeUser() {
@@ -83,8 +82,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let firstSpace = name.firstIndex(of: " ") ?? name.endIndex
                 let firstName = name[..<firstSpace]
                 self.welcome.text = "Welcome, \(firstName)"
-                self.height = value?["height"] as? Double ?? 0.0
+                self.height = value?["height"] as? Double ?? 0
                 self.weights = value?["weight"] as? [Double] ?? []
+                self.calculateBMI()
+                self.updateGraph()
+                self.weightInput.placeholder = "\(self.weights)"
+                self.heightInput.placeholder = "\(self.height)"
             }
         }
     }
@@ -103,8 +106,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         chart.chartDescription?.text = "Weight Chart"
     }
     
-    func calculateBMI(weight: Double) {
-        let bmi = Int(weight / pow(height, 2) * 10000)
+    func calculateBMI() {
+        let bmi = Int(weights[weights.count - 1] / pow(height, 2) * 10000)
         bmiLabel.text! = "BMI: \(bmi)"
     }
     
