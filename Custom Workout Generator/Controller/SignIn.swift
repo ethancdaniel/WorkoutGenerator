@@ -27,7 +27,8 @@ class SignIn: UIViewController {
                     
                     strongSelf.present(alertController, animated: true, completion: nil)
                 } else {
-                    strongSelf.performSegue(withIdentifier: "signInToHome", sender: self)
+                    let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as UIViewController
+                    strongSelf.present(rootVC, animated: true, completion: nil)
                 }
             }
         }
